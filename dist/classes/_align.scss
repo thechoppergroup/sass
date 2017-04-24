@@ -1,0 +1,71 @@
+.origin {
+  position: relative;
+}
+
+.align- {
+  position: absolute;
+
+  &-top {
+    @extend .align-;
+    top: 0;
+
+    &-center {
+      @extend .align--top;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &-right {
+      @extend .align--top;
+      right: 0;
+    }
+
+    &-left {
+      @extend .align--top;
+      left: 0;
+    }
+  }
+
+  &-bottom {
+    @extend .align-;
+    bottom: 0;
+
+    &-right {
+      @extend .align--bottom;
+      right: 0;
+    }
+
+    &-left {
+      @extend .align--bottom;
+      left: 0;
+    }
+
+    &-center {
+      @extend .align--bottom;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &-center {
+    @extend .align-;
+    top: 50%;
+    transform: translateY(0, -50%);
+
+    &-center {
+      @extend .align--top;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-left {
+      @extend .align--center;
+      left: 0;
+    }
+
+    &-right {
+      @extend .align--center;
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+$breakpoints: (
+  'iphone_4': (
+    'min': 320px,
+    'max': 480px
+  ),
+  'iphone_5': (
+    'min': 320px,
+    'max': 568px
+  ),
+  'iphone_6': (
+    'min': 375px,
+    'max': 667px
+  ),
+  'iphone_6_plus': (
+    'min': 414px,
+    'max': 736px
+  ),
+  'ipad_min': (
+    'min': 768px,
+    'max': 1024px
+  ),
+  'ipad_1_2': (
+    'min': 768px,
+    'max': 1024px
+  ),
+  'ipad_3_4': (
+    'min': 768px,
+    'max': 1024px
+  ),
+  'apple_watch': (
+    'min': 42mm,
+    'max': 38mm
+  )
+);

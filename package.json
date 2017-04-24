@@ -1,0 +1,31 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "SASS base framework for scoutahead",
+  "main": "_index.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thechoppergroup/sass.git"
+  },
+  "keywords": [
+    "SASS",
+    "SCSS",
+    "framework",
+    "CSS"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thechoppergroup/sass/issues"
+  },
+  "homepage": "https://github.com/thechoppergroup/sass#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.2",
+    "path": "^0.12.7"
+  }
+}

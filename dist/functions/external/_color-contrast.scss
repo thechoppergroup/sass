@@ -1,3 +1,4 @@
+// sass-lint:disable no-color-literals
 /*
   WCAG color contrast formula
   https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18#G18-procedure
@@ -23,12 +24,12 @@
 }
 
 // Constrain number between two values
-@function clip($value, $min : 0.0001, $max : 0.9999) {
+@function clip($value, $min: 0.0001, $max: 0.9999) {
   @return if($value > $max, $max, if($value < $min, $min, $value));
 }
 
 // Checks if value is within specified bounds, inclusive
-@function in-bounds($value, $min : 0, $max : 1) {
+@function in-bounds($value, $min: 0, $max: 1) {
   @return if($value >= $min and $value <= $max, true, false);
 }
 
@@ -52,10 +53,12 @@
 
 // Returns relative luminance of color
 // See w3.org link for formula
+
+
 @function luminance($color) {
-  $red:   xyz(red($color));
+  $red: xyz(red($color));
   $green: xyz(green($color));
-  $blue:  xyz(blue($color));
+  $blue: xyz(blue($color));
 
   @return $red * 0.2126 + $green * 0.7152 + $blue * 0.0722;
 }
@@ -64,7 +67,7 @@
 
 // Checks if two colors pass minimum contrast requirements, option to return ratio instead of true/false
 // See w3.org link for formula
-@function check-contrast($color1, $color2 : #fff, $min-ratio : 'AA', $return-ratio : false) {
+@function check-contrast($color1, $color2: #fff, $min-ratio: 'AA', $return-ratio: false) {
   // Accept keywords for ratio
   @if($min-ratio == 'AA' or $min-ratio == 'AAALG') { $min-ratio: 4.5; }
   @elseif($min-ratio == 'AALG') { $min-ratio: 3; }
@@ -161,7 +164,7 @@
 //== Step six: Fix colors
 
 // Tries to fix contrast by adjusting $color1
-@function fix-color($color1, $color2 : #fff, $min-ratio : 'AA', $iterations : 5) {
+@function fix-color($color1, $color2: #fff, $min-ratio: 'AA', $iterations: 5) {
   // Accept keywords for ratio
   @if($min-ratio == 'AA' or $min-ratio == 'AAALG') { $min-ratio: 4.5; }
   @elseif($min-ratio == 'AALG') { $min-ratio: 3; }
@@ -199,9 +202,12 @@
     }
 
     // Skip the whole conversion if we just need #fff or #000
-    @if($target-luminance >= 1) { @return #fff; }
-    @elseif ($target-luminance <= 0) { @return #000; }
-    @else {
+    @if($target-luminance >= 1) {
+      @return #fff;
+    }
+    @elseif ($target-luminance <= 0) {
+      @return #000;
+    } @else {
       // Scale color by calculated difference to arrive at target luminance
       $color1: scale-luminance($color1, $target-luminance);
 
@@ -218,7 +224,7 @@
 // Tries to fix contrast of both colors by weighted balance (0–100)
 // 0 = don't change first color, change second color;
 // 100 = change first color, don't change second color
-@function fix-contrast($color1, $color2, $min-ratio : 'AA', $balance : 50) {
+@function fix-contrast($color1, $color2, $min-ratio: 'AA', $balance: 50) {
   @if(not check-contrast($color1, $color2, $min-ratio)) {
     // Fix colors
     $color-fixed-1: fix-color($color1, $color2, $min-ratio);
@@ -234,11 +240,12 @@
       @if(not in-bounds(luminance($color-fixed-2), 0.00002, 0.99936)) {
         // So we scale the opposite color to compensate
         $color1: fix-color($color1, $color2, $min-ratio);
-        @warn "Your settings didn't work. Modifying first color in an attempt to fix."
+        @warn 'Your settings didn\'t work. Modifying first color in an attempt to fix.';
       }
+
       @if(not in-bounds(luminance($color-fixed-1), 0.00002, 0.99936)) {
         $color2: fix-color($color2, $color1, $min-ratio);
-        @warn "Your settings didn't work. Modifying second color in an attempt to fix."
+        @warn 'Your settings didn\'t work. Modifying second color in an attempt to fix.';
       }
     }
   }
@@ -248,7 +255,7 @@
 }
 
 // Get the best contrast when given three colors
-@function best-contrast($color, $color1, $color2, $ratio1 : 'AA', $ratio2 : $ratio1) {
+@function best-contrast($color, $color1, $color2, $ratio1: 'AA', $ratio2: $ratio1) {
   @if(not check-contrast($color, $color1, $ratio1) or not check-contrast($color, $color2, $ratio2)) {
     // First get the luminance of the two static colors
     $lum1: luminance(fix-color($color1, $color1, $ratio1));
