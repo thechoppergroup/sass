@@ -1,0 +1,10 @@
+@function get-deep($map, $string) {
+  $temp: $map;
+  $array: str-split($string, '.');
+
+  @each $var in $array {
+    $temp: map-get($temp, $var);
+  }
+
+  @return $temp;
+}

@@ -45,6 +45,12 @@ gulp.task('sass', ['lint'], function () {
     }).on('error', sass.logError))
   });
 
+
+gulp.task('lint:watch', ['lint'], () => {
+  gulp.watch(dist, ['lint']);
+})
+
+
 gulp.task('serve', function () {
   browserSync.init({
         server: {
