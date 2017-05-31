@@ -30,5 +30,14 @@
     "gulp-strip-comments": "^2.4.5",
     "gulp-styleguide": "^0.3.1",
     "path": "^0.12.7"
+  },
+  "dependencies": {
+    "gulp-copy": "^1.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-livingcss": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "livingcss": "^4.3.0",
+    "merge": "^1.2.0"
   }
 }

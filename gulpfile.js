@@ -1,65 +1,59 @@
-'use strict';
+'use strict'
 
-const gulp = require('gulp');
-const path = require('path');
-const sass = require('gulp-sass');
-const sassLint = require('gulp-sass-lint');
-const strip = require('gulp-strip-comments');
-const styleguide = require('gulp-styleguide');
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create()
+const livingcss = require('gulp-livingcss')
+const gulp = require('gulp')
+const merge = require('merge-stream')
+const path = require('path')
+const rename = require("gulp-rename")
+const sass = require('gulp-sass')
+const sassLint = require('gulp-sass-lint')
+const sourcemaps = require('gulp-sourcemaps')
+const strip = require('gulp-strip-comments')
+const styleguide = require('gulp-styleguide')
+const gulpif = require('gulp-if')
 
-const dist = path.join(__dirname, 'dist/**/*.s+(a|c)ss')
+const paths = {}
 
-const options = {
-    site: {
-        title: 'Test Pattern Library'
-    },
-    src: {
-      css: [dist, '!./dist/bower_components/*']
-    },
-    dest: {
-      html: 'styleguide'
-    }
-};
+paths.src = path.join(__dirname, 'src')
+paths.dist = path.join(__dirname, 'dist')
+paths.styleguide = path.join(__dirname, 'styleguide')
+paths.sass = path.join(paths.src, '**/*.s+(a|c)ss')
+paths.sassIgnore = path.join(paths.src, 'bower_components/**/*..s+(a|c)ss')
+
+gulp.task('livingcss', function () {
+  gulp.src([paths.sass, '!' + paths.sassIgnore])
+    .pipe(livingcss())
+    .pipe(gulp.dest('styleguide'))
+  })
 
 
-gulp.task('templates', styleguide.templates(options));
-gulp.task('build', ['templates'], styleguide.build(options));
-
-gulp.task('lint', function () {
-  return gulp.src(dist)
+gulp.task('sass', function () {
+  console.log(paths.sassIgnore)
+  return gulp
+    .src(paths.sass)
     .pipe(sassLint({
       configFile: '.sass-lint.yml',
       files: {
-        ignore: 'dist/bower_components/**/*.s+(a|c)ss' // This will still be respected and read
+        ignore: 'src/bower_components/**/*.s+(a|c)ss'
       }
     }))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(paths.dist))
   })
 
-gulp.task('sass', ['lint'], function () {
-  return gulp.src(dist)
-    .pipe(sass({
-      outputStyle: 'expanded'
-    }).on('error', sass.logError))
-  });
 
-
-gulp.task('lint:watch', ['lint'], () => {
-  gulp.watch(dist, ['lint']);
-})
-
-
-gulp.task('serve', function () {
+gulp.task('serve', ['sass', 'livingcss'], function () {
   browserSync.init({
         server: {
           baseDir: "./styleguide"
         }
-    });
+    })
 
-    gulp.watch(dist, {interval:2000}, ['sass', 'build']);
-    gulp.watch("./styleguide/*.html").on('change', browserSync.reload);
+    gulp.watch(paths.sass, {interval:2000}, ['sass', 'livingcss'])
+    gulp.watch("./styleguide/*.html").on('change', browserSync.reload)
   })
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['serve'])
