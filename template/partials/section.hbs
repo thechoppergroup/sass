@@ -1,0 +1,34 @@
+{{#if usage}}
+  <div class="sg--usage origin">{{usage}}</div>
+{{/if}}
+
+{{#if example}}
+<livingcss-example>{{{example.description}}}</livingcss-example>
+{{/if}}
+
+{{#if color}}<div class="flex">
+  {{#each (toArray color)}}
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: {{description}}">{{description}}<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">{{name}}</p>
+
+      <span class="sg--color-cBlock" style="background-color: {{description}};"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">RGB</span> <span>{{description}}</span></li>
+        <li><span class="collapse">HEX</span> <span>#40b1bd</span></li>
+      </ul>
+    </div>
+  {{/each}}
+</div>
+{{/if}}
+
+{{#if code}}
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-{{id}}">
+  <label for="sg--codeToggle-{{id}}"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-{{code.type}}">{{code.description}}</code></pre>
+</div>
+{{/if}}

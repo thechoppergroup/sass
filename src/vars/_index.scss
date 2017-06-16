@@ -1,18 +1,166 @@
 /**
- * This section is dedicated to how awesome Adrian and how much Andrew needs him... Cause without Adrian, Andrew would be completely lost
+ * @section Breakpoints
+ * @sectionof Global Variables
  *
+ * @code {scss}
+ *  _break-points.scss
  *
- * @section Global Variables
- * @code
- *   get-deep(breakpoints, iphone_4.min)
+ * @example
+ *  .example {
+ *    get-deep(breakpoints, iphone_4.min);
+ *  }
  */
 
+/**
+ * Different example output than code output
+ *
+ * @section Color Base
+ * @sectionof Global Variables
+ *
+ * @code {scss}
+ *  '_color-base.scss'
+ *
+ * @example
+ * <p class="myclass">Lorem ipsum dolar itset</p>
+ */
 
-@import 'break-points';
+/**
+ * Different example output than code output
+ *
+ * @section Color Wheel
+ * @sectionof Global Variables
+ *
+ * @code {scss}
+ *  _color-wheel.scss
+ *
+ * @color yellow - #f7ec1f
+ * @color yellow-orange - #ffd108
+ * @color orange - #faa71a
+ * @color red-orange - #f47c20
+ * @color red - #ee2c24
+ * @color red-violet - #ed2490
+ * @color violet - #7f4098
+ * @color blue-violet - #2e429b
+ * @color blue - #2077bd
+ * @color blue-green - #00b2d7
+ * @color green - #21b24b
+ * @color yellow-green - #85c441
+ *
+ * @customTag Hello World
+ *
+ *
+ * @example {{markup}}
+ * <div class="my-awesome-class">Example</div>
+ */
 
+/**
+ * Different example output than code output
+ *
+ * @section Font Weights
+ * @sectionof Global Variables
+ *
+ * @code {scss}
+ *  _font-weights.scss
+ *
+ * @example
+ * <div class="my-awesome-class">Example</div>
+ */
 
-@import 'color-base';
+/**
+ * Different example output than code output
+ *
+ * @section Inputs
+ * @sectionof Global Variables
+ *
+ * @code
+ * <input type="text" placeholder="This is an input">
+ *
+ * @example
+ * <input type="text" placeholder="This is an input">
+ */
 
-@import 'color-wheel';
-@import 'font-weights';
-@import 'inputs';
+ /**
+  * A list of all the uses and types of our buttons
+  *
+  * @section Buttons
+  */
+
+ /**
+  * The add button should be used in the case of adding of accepting an action.
+  *
+  * @section Add
+  * @sectionof Buttons
+  *
+  * @usage The `size` property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.
+  *
+  * @code {handlebars}
+  * {{> snippets/buttons/button.add size="sm" text="Add Action" icon="search" }}
+  *
+  * @example
+  * <button class="button--add-xs" size="sm"><span><i class="ion-search"></i> Add Action</button>
+  *
+  */
+
+ /**
+  * The add button should be used in the case of adding of accepting an action.
+  *
+  * @section Back
+  * @sectionof Buttons
+  *
+  * @usage The `size` property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.
+  *
+  * @code {handlebars}
+  * {{> snippets/buttons/button.back size="sm" text="Back Action" icon="close" }}
+  *
+  * @example
+  * <button class="button--add-xs" size="sm"><span><i class="ion-close"></i> Back Action</button>
+  *
+  */
+
+ /**
+  * The add button should be used in the case of adding of accepting an action.
+  *
+  * @section Cancel
+  * @sectionof Buttons
+  *
+  * @usage The `size` property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.
+  *
+  * @code {handlebars}
+  * {{> snippets/buttons/button.cancel size="sm" text="Cancel Action" icon="close" }}
+  *
+  * @example
+  * <button class="button--cancel-xs" size="sm"><span><i class="ion-close"></i> Cancel Action</button>
+  *
+  */
+
+ /**
+  * The add button should be used in the case of adding of accepting an action.
+  *
+  * @section Popover
+  * @sectionof Buttons
+  *
+  * @usage The `size` property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.
+  *
+  * @code {handlebars}
+  * {{> snippets/buttons/button.popover size="sm" text="Initiate a Popover" icon="close" }}
+  *
+  * @example
+  * <button class="button--popover-xs" size="sm"><span><i class="ion-close"></i> Initiate a Popover</button>
+  *
+  */
+
+ /**
+  * The add button should be used in the case of adding of accepting an action.
+  *
+  * @section Remove
+  * @sectionof Buttons
+  *
+  * @usage The `size` property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.
+  *
+  * @code {handlebars}
+  * {{> snippets/buttons/button.remove size="sm" text="Remove Action" icon="close" }}
+  *
+  * @example
+  * <button class="button--remove-xs" size="sm"><span><i class="ion-close"></i> Remove Action</button>
+  *
+  */

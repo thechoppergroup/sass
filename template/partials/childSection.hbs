@@ -1,0 +1,17 @@
+<div class="sg--child-header">
+
+  {{#if name}}
+  <h{{depth}} class="sg--child-heading">{{name}}</h{{depth}}>
+  {{/if}}
+
+  {{#if description}}
+  <div class="sg--description">{{{description}}}</div>
+  {{/if}}
+
+</div>
+
+{{~> section}}
+
+{{#children}}
+{{~> childSection}}
+{{/children}}

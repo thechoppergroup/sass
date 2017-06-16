@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>{{title}}</title>
+
+  {{#each globalStylesheets}}
+  <link rel="stylesheet" href="{{this}}">
+  {{/each}}
+
+</head>
+
+<body class="{{id}}">
+
+  <header class="sg--mast" id="mast">
+    <div class="sg--logo collapse">
+      {{> logo }}
+    </div>
+
+    {{#if navbar}}
+      <nav class="sg--nav collapse">
+        <ul class="unstyle">
+          {{#each navbar}}
+          <li class="{{#if selected}}is-active {{/if}}{{id}}"><a href="{{url}}">{{name}}</a></li>
+          {{/each}}
+        </ul>
+        <button class="sg--mobile_menu">{{{menuButtonHTML}}}</button>
+      </nav>
+    {{/if}}
+  </header>
+
+  <section class="sg--intro">
+
+    <div>
+
+      <img src="https://res.cloudinary.com/chopper/image/upload/v1497383519/Site%20Images/styleguide/logo_guidelines.png" width="800">
+
+    </div>
+
+    <div>
+
+      <a href="#content" class="button--add-sm" title="Start Building"><span><i class="ion-code"></i> Start Building</span></a>
+
+      <a href="#" class="button--confirm-sm" title="Download Assets"><span><i class="ion-android-download"></i> Download Assets</span></a>
+
+    </div>
+
+  </section>
+
+  <section class="sg--content" id="content">
+
+    <main class="sg--main collapse">
+
+      {{#each sections}}
+      <article class="sg--parent js-{{id}} js-waypoint" id="{{id}}" data-section="{{id}}">
+        <a href="#{{id}}" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+        {{#if name}}<h2 class="sg--parent-heading">{{name}}</h2>{{/if}}
+
+        {{#if description}}
+        <div class="sg--description">{{{description}}}</div>
+        {{/if}}
+
+        {{~> section}}
+
+        {{#children}}
+        <article class="sg--child js-{{id}} js-waypoint" id="{{../id}}_{{id}}" data-section="{{id}}">
+          <a href="#{{id}}" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+
+          {{~> childSection}}
+
+        </article>
+        {{/children}}
+
+      </article>
+      {{/each}}
+
+    </main>
+
+    <aside class="sg--sidebar" id="sidebar">
+
+      <ul class="sg--sidebar-menu unstyle js-sidemenu">
+      {{#each sections}}
+        <li class="parent js-{{id}}"><a href="#{{id}}" data-section="{{id}}">{{name}}</a>
+          {{#if children}}<ul class="unstyle">{{/if}}
+            {{#children}}
+            <li class="origin js-{{id}}"><a href="#{{../id}}_{{id}}">{{name}}</a></li>
+            {{/children}}
+          {{#if children}}</ul>{{/if}}
+        </li>
+      {{/each}}
+      </ul>
+
+    </aside>
+
+  </section>
+
+  <footer class="sg--footer">
+    <p>{{footerHTML}}</p>
+  </footer>
+
+  {{#each scripts}}
+  <script type="text/javascript" src="{{this}}"></script>
+  {{/each}}
+
+  <script>
+    var waypoints = document.querySelectorAll('.js-waypoint');
+    var className = "is-active";
+    var links = document.querySelectorAll('[href^="#"]');
+    if (waypoints.length !== 0) {
+      Array.prototype.forEach.call(waypoints, function (waypoint, index) {
+        waypoint.wp = new Waypoint({
+          element: waypoint,
+          handler: function(direction) {
+            Array.prototype.forEach.call(links, function (link, index) {
+              var ids = waypoint.id.split('_');
+
+              if(link.getAttribute('href') === ('#' + ids[0]) || link.getAttribute('href') === ('#' + waypoint.id)) {
+                $(link).parent().addClass(className)
+              } else {
+                $(link).parent().removeClass(className)
+              }
+            })
+          }
+        })
+      })
+    }
+
+    $(document).ready(function () {
+      var scrollPos = $(document).scrollTop;
+      var windowHeight = window.innerheight;
+      const sidebar = $('#sidebar');
+      const mast = $('#mast');
+
+      if(scrollPos > windowHeight) {
+        mast.addClass('is-fixed');
+      }
+
+      var mastWayPoints = new Waypoint({
+        element: mast,
+        handler: function(direction) {
+          if (direction === 'down') {
+            mast.addClass('is-fixed')
+          } else {
+            mast.removeClass('is-fixed')
+          }
+        }
+      })
+
+      if (scrollPos > windowHeight + 60) {
+        sidebar.addClass('is-fixed')
+      }
+
+      var navWayPointsAdd = new Waypoint({
+        element: sidebar,
+        offset: 60,
+        handler: function(direction) {
+          if (direction === 'down') {
+            sidebar.addClass('is-fixed')
+          } else {
+            sidebar.removeClass('is-fixed')
+          }
+        }
+      })
+    })
+
+    function resizeIframe(iframe) {
+      iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+    }
+
+    var pdf = document.getElementById('pdf');
+    var embed = document.getElementById('embed');
+
+  </script>
+</body>
+</html>
