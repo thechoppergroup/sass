@@ -1,0 +1,560 @@
+{
+  "build_hash": "fdc59d67c4954e208449ae6f286c41f5",
+  "prefix": "ion-",
+  "version": "2.0.0",
+  "name": "Ionicons",
+  "icons": [
+    {
+      "code": "0xf188",
+      "name": "address-book"
+    },
+    {
+      "code": "0xf101",
+      "name": "alert"
+    },
+    {
+      "code": "0xf100",
+      "name": "alert-circled"
+    },
+    {
+      "code": "0xf18a",
+      "name": "alert-send"
+    },
+    {
+      "code": "0xf2ca",
+      "name": "android-arrow-back"
+    },
+    {
+      "code": "0xf2d7",
+      "name": "android-close"
+    },
+    {
+      "code": "0xf2dd",
+      "name": "android-download"
+    },
+    {
+      "code": "0xf388",
+      "name": "android-favorite"
+    },
+    {
+      "code": "0xf387",
+      "name": "android-favorite-outline"
+    },
+    {
+      "code": "0xf2ec",
+      "name": "android-microphone"
+    },
+    {
+      "code": "0xf395",
+      "name": "android-microphone-off"
+    },
+    {
+      "code": "0xf3a0",
+      "name": "android-person"
+    },
+    {
+      "code": "0xf39f",
+      "name": "android-person-add"
+    },
+    {
+      "code": "0xf2f8",
+      "name": "android-share"
+    },
+    {
+      "code": "0xf3ac",
+      "name": "android-share-alt"
+    },
+    {
+      "code": "0xf145",
+      "name": "aol"
+    },
+    {
+      "code": "0xf104",
+      "name": "arrow-down-b"
+    },
+    {
+      "code": "0xf105",
+      "name": "arrow-down-c"
+    },
+    {
+      "code": "0xf107",
+      "name": "arrow-left-b"
+    },
+    {
+      "code": "0xf108",
+      "name": "arrow-left-c"
+    },
+    {
+      "code": "0xf10a",
+      "name": "arrow-right-b"
+    },
+    {
+      "code": "0xf10b",
+      "name": "arrow-right-c"
+    },
+    {
+      "code": "0xf10d",
+      "name": "arrow-up-b"
+    },
+    {
+      "code": "0xf10e",
+      "name": "arrow-up-c"
+    },
+    {
+      "code": "0xf26b",
+      "name": "bookmark"
+    },
+    {
+      "code": "0xf118",
+      "name": "camera"
+    },
+    {
+      "code": "0xf11f",
+      "name": "chatbubbles"
+    },
+    {
+      "code": "0xf122",
+      "name": "checkmark"
+    },
+    {
+      "code": "0xf14e",
+      "name": "checkmark-box"
+    },
+    {
+      "code": "0xf14d",
+      "name": "checkmark-box-checked"
+    },
+    {
+      "code": "0xf120",
+      "name": "checkmark-circled"
+    },
+    {
+      "code": "0xf187",
+      "name": "checkmark-circled-outlined"
+    },
+    {
+      "code": "0xf123",
+      "name": "chevron-down"
+    },
+    {
+      "code": "0xf124",
+      "name": "chevron-left"
+    },
+    {
+      "code": "0xf125",
+      "name": "chevron-right"
+    },
+    {
+      "code": "0xf138",
+      "name": "chevron-right-double"
+    },
+    {
+      "code": "0xf126",
+      "name": "chevron-up"
+    },
+    {
+      "code": "0xf127",
+      "name": "clipboard"
+    },
+    {
+      "code": "0xf12a",
+      "name": "close"
+    },
+    {
+      "code": "0xf12b",
+      "name": "cloud"
+    },
+    {
+      "code": "0xf14c",
+      "name": "company"
+    },
+    {
+      "code": "0xf152",
+      "name": "disconnected"
+    },
+    {
+      "code": "0xf185",
+      "name": "division"
+    },
+    {
+      "code": "0xf12f",
+      "name": "document"
+    },
+    {
+      "code": "0xf130",
+      "name": "drag"
+    },
+    {
+      "code": "0xf276",
+      "name": "earth"
+    },
+    {
+      "code": "0xf2bf",
+      "name": "edit"
+    },
+    {
+      "code": "0xf132",
+      "name": "email"
+    },
+    {
+      "code": "0xf133",
+      "name": "eye"
+    },
+    {
+      "code": "0xf306",
+      "name": "eye-disabled"
+    },
+    {
+      "code": "0xf197",
+      "name": "face-hide"
+    },
+    {
+      "code": "0xf198",
+      "name": "face-show"
+    },
+    {
+      "code": "0xf279",
+      "name": "flag"
+    },
+    {
+      "code": "0xf13a",
+      "name": "forward"
+    },
+    {
+      "code": "0xf13d",
+      "name": "gear-a"
+    },
+    {
+      "code": "0xf27b",
+      "name": "hammer"
+    },
+    {
+      "code": "0xf143",
+      "name": "help"
+    },
+    {
+      "code": "0xf142",
+      "name": "help-circled"
+    },
+    {
+      "code": "0xf144",
+      "name": "home"
+    },
+    {
+      "code": "0xf149",
+      "name": "information-circled"
+    },
+    {
+      "code": "0xf3e8",
+      "name": "ios-book"
+    },
+    {
+      "code": "0xf400",
+      "name": "ios-circle-filled"
+    },
+    {
+      "code": "0xf401",
+      "name": "ios-circle-outline"
+    },
+    {
+      "code": "0xf404",
+      "name": "ios-close-empty"
+    },
+    {
+      "code": "0xf41c",
+      "name": "ios-copy"
+    },
+    {
+      "code": "0xf451",
+      "name": "ios-lightbulb-outline"
+    },
+    {
+      "code": "0xf453",
+      "name": "ios-list-outline"
+    },
+    {
+      "code": "0xf47c",
+      "name": "ios-people"
+    },
+    {
+      "code": "0xf480",
+      "name": "ios-personadd"
+    },
+    {
+      "code": "0xf4b9",
+      "name": "ios-telephone"
+    },
+    {
+      "code": "0xf19b",
+      "name": "ios-telephone-hang-up"
+    },
+    {
+      "code": "0xf1fe",
+      "name": "link"
+    },
+    {
+      "code": "0xf29d",
+      "name": "load-d"
+    },
+    {
+      "code": "0xf200",
+      "name": "locked"
+    },
+    {
+      "code": "0xf29e",
+      "name": "log-in"
+    },
+    {
+      "code": "0xf29f",
+      "name": "log-out"
+    },
+    {
+      "code": "0xf191",
+      "name": "media-excel"
+    },
+    {
+      "code": "0xf192",
+      "name": "media-image"
+    },
+    {
+      "code": "0xf193",
+      "name": "media-pdf"
+    },
+    {
+      "code": "0xf194",
+      "name": "media-powerpoint"
+    },
+    {
+      "code": "0xf195",
+      "name": "media-text"
+    },
+    {
+      "code": "0xf196",
+      "name": "media-word"
+    },
+    {
+      "code": "0xf209",
+      "name": "minus"
+    },
+    {
+      "code": "0xf207",
+      "name": "minus-circled"
+    },
+    {
+      "code": "0xf20a",
+      "name": "monitor"
+    },
+    {
+      "code": "0xf20e",
+      "name": "navicon"
+    },
+    {
+      "code": "0xf18c",
+      "name": "notification"
+    },
+    {
+      "code": "0xf18b",
+      "name": "notification-off"
+    },
+    {
+      "code": "0xf13c",
+      "name": "outlook"
+    },
+    {
+      "code": "0xf2c3",
+      "name": "paper-airplane"
+    },
+    {
+      "code": "0xf213",
+      "name": "person"
+    },
+    {
+      "code": "0xf211",
+      "name": "person-add"
+    },
+    {
+      "code": "0xf183",
+      "name": "person-blocked"
+    },
+    {
+      "code": "0xf151",
+      "name": "person-permissions"
+    },
+    {
+      "code": "0xf212",
+      "name": "person-stalker"
+    },
+    {
+      "code": "0xf2a5",
+      "name": "pie-graph"
+    },
+    {
+      "code": "0xf215",
+      "name": "play"
+    },
+    {
+      "code": "0xf218",
+      "name": "plus"
+    },
+    {
+      "code": "0xf216",
+      "name": "plus-circled"
+    },
+    {
+      "code": "0xf347",
+      "name": "quote"
+    },
+    {
+      "code": "0xf18d",
+      "name": "recent"
+    },
+    {
+      "code": "0xf21b",
+      "name": "record"
+    },
+    {
+      "code": "0xf186",
+      "name": "record-outlined"
+    },
+    {
+      "code": "0xf146",
+      "name": "save"
+    },
+    {
+      "code": "0xf19c",
+      "name": "scout-external-people"
+    },
+    {
+      "code": "0xf19d",
+      "name": "scout-external-person"
+    },
+    {
+      "code": "0xf21f",
+      "name": "search"
+    },
+    {
+      "code": "0xf220",
+      "name": "share"
+    },
+    {
+      "code": "0xf231",
+      "name": "social-facebook"
+    },
+    {
+      "code": "0xf34f",
+      "name": "social-google"
+    },
+    {
+      "code": "0xf34e",
+      "name": "social-google-outline"
+    },
+    {
+      "code": "0xf235",
+      "name": "social-googleplus"
+    },
+    {
+      "code": "0xf234",
+      "name": "social-googleplus-outline"
+    },
+    {
+      "code": "0xf239",
+      "name": "social-linkedin"
+    },
+    {
+      "code": "0xf243",
+      "name": "social-twitter"
+    },
+    {
+      "code": "0xf247",
+      "name": "social-windows"
+    },
+    {
+      "code": "0xf24b",
+      "name": "social-yahoo"
+    },
+    {
+      "code": "0xf2b2",
+      "name": "speakerphone"
+    },
+    {
+      "code": "0xf24e",
+      "name": "star"
+    },
+    {
+      "code": "0xf184",
+      "name": "star-outline"
+    },
+    {
+      "code": "0xf2b5",
+      "name": "stats-bars"
+    },
+    {
+      "code": "0xf18e",
+      "name": "status-active"
+    },
+    {
+      "code": "0xf18f",
+      "name": "status-disconnected"
+    },
+    {
+      "code": "0xf190",
+      "name": "status-inactive"
+    },
+    {
+      "code": "0xf24f",
+      "name": "stop"
+    },
+    {
+      "code": "0xf182",
+      "name": "survey"
+    },
+    {
+      "code": "0xf153",
+      "name": "toggle-default"
+    },
+    {
+      "code": "0xf154",
+      "name": "toggle-toggled"
+    },
+    {
+      "code": "0xf252",
+      "name": "trash-a"
+    },
+    {
+      "code": "0xf253",
+      "name": "trash-b"
+    },
+    {
+      "code": "0xf14f",
+      "name": "trash-b-open"
+    },
+    {
+      "code": "0xf357",
+      "name": "university"
+    },
+    {
+      "code": "0xf255",
+      "name": "upload"
+    },
+    {
+      "code": "0xf189",
+      "name": "upload-circled"
+    },
+    {
+      "code": "0xf257",
+      "name": "volume-high"
+    },
+    {
+      "code": "0xf25a",
+      "name": "volume-mute"
+    },
+    {
+      "code": "0xf19a",
+      "name": "webcam"
+    },
+    {
+      "code": "0xf199",
+      "name": "webcam-hide"
+    }
+  ]
+}

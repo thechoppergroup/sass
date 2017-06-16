@@ -1,0 +1,22 @@
+{
+  "name": "SASS Styleguide",
+  "homepage": "https://github.com/thechoppergroup/sass",
+  "authors": [
+    "Adrian Miller <adrianjonmiller@gmail.com>"
+  ],
+  "description": "SASS Living Styleguide",
+  "main": "styleguide.hbs",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./dist/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "waypoints": "^4.0.1"
+  }
+}
