@@ -1,0 +1,64 @@
+.panels {
+  height: 100%;
+  position: relative;
+
+  .panels-search {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    right: 0;
+    padding: .5rem;
+  }
+
+  .panels-tabs {
+    width: 2.5rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .panels-group {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100% - 125px);
+    overflow-x: hidden;
+    padding: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    @include ie-11 {
+      margin-right: 0;
+      -ms-overflow-style: none;
+    }
+
+    @include ie-edge {
+      margin-right: 0;
+      -ms-overflow-style: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    .panels-group-panel {
+      margin-top: 0;
+      &:not(.is-hidden) + .panels-group-panel {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+#search-channels {
+  background-color: darken($white, 14%);
+  transition: background-color .25s ease-in-out;
+
+  &:focus {
+    background-color: $white;
+  }
+}

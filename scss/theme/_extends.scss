@@ -1,0 +1,22 @@
+%pad {
+  padding: 1rem;
+}
+
+%dropshadow {
+  box-shadow: 0 0 2rem rgba($black, 0.3);
+}
+
+%boxshadow--lg {
+  box-shadow: 0 4px 4px 0 rgba($black, .1),
+              0 12px 13px 0 rgba($black, .09),
+              0 8px 13px 0 rgba($black, .09),
+              0 41px 59.15px 5.85px rgba($black, .09);
+}
+
+%card {
+  @extend %dropshadow;
+  display: block;
+  padding: 1rem;
+  border-radius: .25rem;
+  background-color: $white;
+}

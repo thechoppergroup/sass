@@ -1,0 +1,18 @@
+.separator- {
+  &-h {
+    display: flex;
+    width: 100%;
+
+    &:after,
+    &:before {
+      content: '';
+      flex: 1 0 auto;
+      margin: auto 0 auto 1rem;
+      border-top: solid thin #ccc;
+    }
+
+    &:before {
+      margin: auto 1rem auto 0;
+    }
+  }
+}

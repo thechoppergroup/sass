@@ -1,0 +1,48 @@
+.pagination {
+  color: scale-color($black, $lightness: 20%);
+
+  li {
+    border: thin solid #ccc;
+    border-radius: $radius;
+    color: scale-color($black, $lightness: 60%);
+    cursor: pointer;
+    height: 20pt;
+    line-height: 20pt;
+    padding: 0;
+    text-align: center;
+    transition: all .25s ease-in-out;
+    width: 20pt;
+
+    &:hover {
+      background-color: scale-color($black, $lightness: 60%);
+      border: thin solid scale-color($black, $lightness: 40%);
+      color: $white;
+
+      b {
+        color: $white;
+        transition: color .25s ease-in-out;
+      }
+    }
+
+    + li {
+      margin-left: 2pt;
+    }
+  }
+
+  [class*='-segment']:not(.current-segment):not(.js-segment) {
+    background-color: transparent;
+    border: 0;
+
+    &:hover b {
+      color: $black;
+    }
+  }
+
+  .current-segment {
+    background-color: get($color-theme, brand);
+    border: thin solid get($color-theme, brand);
+    color: $white;
+    font-weight: bold;
+    pointer-events: none;
+  }
+}

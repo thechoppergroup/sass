@@ -1,0 +1,36 @@
+fieldset {
+  position: relative;
+
+  &:not(.sm) select {
+    box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.2);
+    border-radius: $radius;
+  }
+
+  select {
+    display: inline-block;
+    padding-right: 2rem;
+    padding-left: .5rem;
+    white-space: nowrap;
+  }
+
+  > i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2rem;
+    text-align: center;
+    margin-top: 0;
+    line-height: 3rem;
+    display: block;
+    pointer-events: none;
+    color: get($color-theme, graphics);
+  }
+
+  > legend + i {
+    top: 1rem;
+  }
+
+  &.sm select {
+    border-color: get($color-theme, graphics);
+  }
+}

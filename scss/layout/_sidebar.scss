@@ -1,0 +1,8 @@
+.sidebar {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: get($widths, sidebar);
+  z-index: z($index, sidebar);
+}

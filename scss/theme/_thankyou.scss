@@ -1,0 +1,173 @@
+.thankYou {
+  padding-top: 0 !important;
+
+  .thankYous-logo {
+    position: relative;
+    top: 2px;
+
+    svg {
+      width: 100%;
+      max-width: 250px;
+      height: 25pt;
+      fill: get($color-theme, brand);
+    }
+  }
+}
+
+.darkcard {
+  @extend %boxshadow--lg;
+  background-color: rgba($black, 0.8);
+  padding: 2rem;
+}
+
+.thankYous {
+
+  .thankYous-survey {
+    background-color: $black;
+    position: relative;
+    width: 100%;
+
+    .desktop & {
+      height: 100vh;
+    }
+
+    .mobile & {
+      background-color: $white;
+      margin-left: 0;
+
+      .student,
+      .professional {
+        background-size: cover;
+        padding: 15pt 0;
+        position: relative;
+
+        &:before {
+          background-color: rgba($black, .75);
+          content: '';
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+        }
+      }
+
+      .intro {
+        background-color: $black;
+        position: relative;
+      }
+
+      .student {
+        background-image: url('');
+      }
+
+      .professional {
+        background-image: url('https://res.cloudinary.com/chopper/image/upload/v1453408785/Site Images/for_professionals.jpg');
+      }
+    }
+
+    .desktop & {
+      background: linear-gradient(to bottom, rgba(black, 0.8), rgba(black, 0.8)), url('https://res.cloudinary.com/chopper/image/upload/v1453408784/Site Images/for_professionals.jpg'),
+                  url('https://res.cloudinary.com/chopper/image/upload/v1453408785/Site Images/for_students.jpg'),
+                  linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%);
+      background-repeat: no-repeat, no-repeat, repeat;
+      background-size: 100% cover;
+      background-position: 100% 100%, right 50vw top, 50vw top;
+    }
+
+    .student,
+    .professional {
+      position: relative;
+
+      .type-wrap {
+        position: relative;
+      }
+
+      .type-wrap .page-heading > .inverse::after {
+        left: 50% !important;
+        margin-left: -15% !important;
+      }
+    }
+
+    .both {
+      position: relative;
+    }
+  }
+
+  .thankYous-step {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    .button--back-a {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+
+      .mobile & {
+        left: 1rem;
+        right: auto;
+      }
+    }
+
+    .button--task-b {
+
+      &.is-waiting {
+        padding-left: 30pt;
+        position: relative;
+
+        .save-spinner {
+          display: block;
+        }
+      }
+
+      .save-spinner {
+        position: absolute;
+        left: 5pt;
+        top: 5pt;
+        display: none;
+      }
+    }
+
+    &.thankYous-step--1 {
+      background-color: white;
+    }
+
+    &.thankYous-step--2,
+    &.thankYous-step--3 {
+      box-shadow: inset 0 0 250pt 100pt rgba($black, .25),
+                  inset 0 0 100pt 50pt rgba($black, .3),
+                  inset 0 0 66pt 30pt rgba($black, .1);
+    }
+
+    &.thankYous-step--2 {
+      background-color: $text-color;
+      z-index: 2;
+    }
+
+    &.thankYous-step--3 {
+      background-color: scale-color($text-color, $lightness: -20%);
+      border-top: thin solid rgba($white, 1);
+
+      &:before {
+        background-color: #191919;
+        border: 1px solid rgba($white, 1);
+        content: '';
+        height: 75pt;
+        left: 50%;
+        margin-left: -37.5pt;
+        position: absolute;
+        top: -55.5pt;
+        transform: rotate(45deg);
+        width: 75pt;
+
+        .mobile & {
+          display: none;
+        }
+      }
+    }
+  }
+}

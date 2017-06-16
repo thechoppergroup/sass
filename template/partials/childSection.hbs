@@ -1,17 +1,25 @@
-<div class="sg--child-header">
+<article class="sg--child js-{{id}} js-waypoint" id="{{../id}}_{{id}}" data-section="{{id}}">
 
-  {{#if name}}
-  <h{{depth}} class="sg--child-heading">{{name}}</h{{depth}}>
-  {{/if}}
+  <div class="sg--child-header">
 
-  {{#if description}}
-  <div class="sg--description">{{{description}}}</div>
-  {{/if}}
+    <a href="#{{id}}" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    {{#if name}}
+    <h{{depth}} class="sg--child-heading">{{name}}</h{{depth}}>
+    {{/if}}
 
-</div>
+    {{#if description}}
+    <div class="sg--description">{{{description}}}</div>
+    {{/if}}
 
-{{~> section}}
+  </div>
+
+  {{~> section}}
+
+</article>
 
 {{#children}}
-{{~> childSection}}
+<article class="sg--grand-child js-{{id}} js-waypoint" id="{{../id}}_{{id}}" data-section="{{id}}">
+  <a href="#{{id}}" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+  {{~> childSection}}
+</article>
 {{/children}}

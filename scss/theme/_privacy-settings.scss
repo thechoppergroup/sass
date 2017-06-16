@@ -1,0 +1,51 @@
+.privacy-settings {
+
+  .privacy-toggle {
+    border: 1px solid #eee;
+    border-radius: $radius;
+    color: scale-color($text-color, $lightness: 30%);
+    font-size: 16pt;
+    padding: 5pt 10pt;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .25s ease-in-out;
+    pointer-events: all;
+
+    &:hover {
+      border-color: #ccc;
+      color: scale-color($text-color, $lightness: 10%);
+    }
+  }
+
+  .privacy-settings-options {
+    padding: 1rem;
+    transition: drop-shadow .25s ease-in-out,
+                opacity .25s ease-in-out;
+  }
+
+  &.is-open,
+  &:hover {
+    pointer-events: all;
+
+    .privacy-toggle {
+      border-color: $white;
+      border-radius: $radius $radius 0 0;
+      color: get($color-theme, brand);
+    }
+
+    .privacy-module {
+      border-radius: $radius 0 $radius $radius;
+      opacity: 1;
+    }
+
+    .privacy-toggle,
+    .privacy-settings-options {
+      background-color: white;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .1),
+                  0 12px 13px 0 rgba(0, 0, 0, .09),
+                  0 8px 13px 0 rgba(0, 0, 0, .09),
+                  0 41px 59.15px 5.85px rgba(0, 0, 0, .09);
+    }
+  }
+}

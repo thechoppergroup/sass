@@ -1,0 +1,19 @@
+.card {
+  background-color: $white;
+  padding: 1rem;
+
+  .card-footer {
+    padding-top: $gutter;
+  }
+
+  .is-editing-card > & {
+    box-shadow: 0 0 0 1000rem rgba($black, 0.8);
+    z-index: z($index, popovers);
+    border-radius: 0;
+  }
+
+  &--sm {
+    @extend .card;
+    padding: .5rem;
+  }
+}

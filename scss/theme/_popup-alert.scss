@@ -1,0 +1,29 @@
+.popup-alert {
+  @extend %dropshadow;
+  align-items: center;
+  background-color: $white;
+  border-radius: $radius;
+  color: darken(desaturate(get($color-theme, message-urgent), 40%), 80%);
+  margin-left: 0;
+  opacity: 1;
+  padding: .5em;
+  transform: translateY(0);
+  transition:
+    opacity .25s ease-in-out,
+    transform .25s ease-in-out;
+  z-index: index($index, segue);
+
+  &.is-hidden {
+    opacity: 0;
+    transform: translateY(-20pt);
+  }
+
+  &:after {
+    content: '';
+    border: solid .75rem transparent;
+    top: 100%;
+    right: 1rem;
+    border-top-color: $white;
+    position: absolute;
+  }
+}

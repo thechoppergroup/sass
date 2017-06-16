@@ -1,0 +1,41 @@
+input {
+  @at-root button,
+  &[type='submit'],
+  &[type='reset'],
+  &[type='button'] {
+    background-color: transparent;
+    vertical-align: top;
+    display: inline-block;
+    padding: 0;
+    outline: none;
+    border: none;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    + button,
+    + a,
+    a + & {
+      margin-top: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    > * {
+      margin-top: 0;
+    }
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}

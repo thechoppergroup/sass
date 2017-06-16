@@ -1,0 +1,24 @@
+.emptystate--panel {
+  background: url('https://res.cloudinary.com/chopper/image/upload/v1490596569/Site%20Images/onboarding/sidebar/onboarding--empty_sidebar.jpg') center top no-repeat;
+  background-size: cover;
+  min-height: 150pt;
+  padding-top: 15pt;
+}
+
+.emptystate--dashboard {
+  background: url('https://res.cloudinary.com/chopper/image/upload/v1490593793/Site%20Images/onboarding/onboarding--bg.jpg') center center no-repeat;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  left: 20rem;
+  margin-top: 0;
+  padding-top: 25vh;
+  position: fixed;
+  top: 15pt;
+  width: 100%;
+  z-index: 3;
+
+  img {
+    display: inline;
+  }
+}

@@ -1,0 +1,71 @@
+/* ----------- Button ----------- */
+@mixin button-builder($height, $base-font: 1rem, $round: false) {
+  font-size: pow(1.05, strip-unit($height)) * $base-font;
+  line-height: 1;
+  white-space: nowrap;
+
+  span {
+    margin-top: 0;
+    padding: 0 $height/2;
+  }
+
+  @if ($round == arcade) {
+    padding: 0;
+    border-radius: 999em;
+    width: $height;
+  } @else {
+    height: $height;
+    min-width: $height;
+    padding: 0;
+    line-height: $height;
+
+    &[disabled='true'] {
+      opacity: .25 !important;;
+      cursor: not-allowed;
+      &:not(.show-title) {
+        pointer-events: none
+      }
+    }
+
+    &.fill {
+      min-width: 100%;
+    }
+
+    > i {
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      display: inline-block;
+      margin-top: 0;
+      padding: 0 $height/3;
+
+      + span {
+        padding-left: 0;
+      }
+    }
+
+    > span + i {
+      padding-left: 0;
+    }
+  }
+}
+
+/* ----------- Generators ----------- */
+@mixin buttons-generator($buttons: (default: gray), $button-heights: (md: 3rem), $base-font: 1rem, $arcade: false) {
+
+  @each $size, $height in $button-heights {
+    %button--#{$size} {
+      @include button-builder($height, $base-font, $arcade);
+    }
+  }
+
+  @each $name, $value in $buttons {
+    @each $size, $height in $button-heights {
+      .button--#{$name}-#{$size} {
+        @extend %button-base;
+        @extend %button--#{$size};
+        @extend %#{$value};
+      }
+    }
+  }
+}

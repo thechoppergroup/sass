@@ -1,0 +1,15 @@
+fieldset {
+  input[type='checkbox'],
+  input[type='radio'] {
+    display: none;
+    outline: none;
+  }
+}
+
+input:not(:checked) ~ .toggle--show {
+  @extend %hide;
+}
+
+input:checked ~ .toggle--hide {
+  @extend %hide;
+}

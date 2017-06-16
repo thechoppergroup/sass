@@ -1,0 +1,30 @@
+.tactile-button {
+  a {
+    background-image: linear-gradient( to top, rgb(215,215,215) 0%, rgb(255,255,255) 100%);
+    border-top: 5pt solid lighten($text-color, 50%);
+    display: block;
+    margin: 0;
+    text-align: center;
+    box-shadow: 0 -.3em .5rem rgba($black, 0.1) inset;
+    text-shadow: 0 1px rgba($white, 1);
+    color: scale-color($text-color, $lightness: 40%);
+
+    .icon {
+      font-size: 32pt;
+      display: block;
+      height: 3rem;
+      line-height: 4rem;
+    }
+
+    @include state('.is-active') {
+      background: $white;
+      box-shadow: none;
+      border-top-color: get($color-theme, brand);
+      color: get($color-theme, brand);
+    }
+  }
+
+  + .tactile-button {
+    border-left: thin solid lighten($text-color, 50%);
+  }
+}

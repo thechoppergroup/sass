@@ -1,0 +1,59 @@
+// @mixin typography(
+//   $interval: perfect-fourth,
+//   $headings: (small, body, h6, h5, h4, h3, h2, h1)
+// ) {
+//
+//   $scale: (
+//     minor-second: 1.067,
+//     major-second: 1.125,
+//     minor-third: 1.2,
+//     major-third: 1.25,
+//     perfect-fourth: 1.333,
+//     augmented-fourth: 1.414,
+//     perfect-fifth: 1.5,
+//     golden-ratio: 1.618,
+//     octave: 2
+//   );
+//
+//   $scale: map-get($scale, $interval);
+//
+//   $b: 0;
+//
+//   @if (index($headings, body)) {
+//     $b: index($headings, body);
+//   }
+//
+//   @each $h in $headings {
+//     $i: index($headings, $h);
+//
+//     @if($i > $b) {
+//       $j: $i - $b;
+//       $l: $scale;
+//
+//       @while $l < pow($scale, $j) {
+//         $l: $l + $scale;
+//       }
+//
+//       #{$h} {
+//         font-size: 1rem * pow($scale, $j);
+//         line-height: $l * 1rem;
+//       }
+//     }
+//
+//     @if($i < $b) {
+//       $j: $b - $i;
+//
+//       #{$h} {
+//         font-size: 1rem / pow($scale, $j);
+//         line-height: 1rem * $scale;
+//       }
+//     }
+//
+//     @if($i == $b) {
+//       body {
+//         font-size: 1rem;
+//         line-height: $scale * 1rem;
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,185 @@
+.instruction- {
+
+  &-view {
+    padding: 1rem;
+  }
+
+  &-video {
+    width: 450px;
+  }
+
+  &-steps {
+    border-top: thin solid rgba($black, .1);
+
+    button {
+      height: 5rem;
+    }
+
+    &-prev,
+    &-next {
+      display: block;
+      padding: 1rem;
+      width: 50%;
+
+      small {
+        color: rgba(black, .5);
+        display: block;
+        line-height: 1rem;
+      }
+
+      &:hover {
+        background-color: #40b1bd;
+        color: white;
+      }
+    }
+
+    &-prev {
+      border-bottom-left-radius: $radius;
+
+      + .instruction--steps-next {
+        border-left: thin solid rgba($black, .1);
+      }
+    }
+  }
+
+  &-actions {
+    background-color: rgba($black, .03);
+
+    > button {
+      border-left: thin solid rgba($black, .1);
+      line-height: 2.5rem;
+      padding: 1rem;
+    }
+  }
+}
+
+.button--onboardTooltip {
+  color: rgba($white, .5);
+  line-height: 5pt;
+  margin-left: .25rem;
+
+  i {
+    font-size: 9pt;
+  }
+
+  &.inverse i {
+    color: rgba($black, .3);
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.help--instructions {
+  width: 450px;
+
+  .help--instructions-play {
+    opacity: 0;
+    transition: opacity .25s ease-in-out, transform .25s ease-in-out;
+  }
+
+  &:hover {
+
+    .help--instructions-play {
+      opacity: 1;
+    }
+  }
+
+  img {
+    filter: grayscale(100%);
+    opacity: .4;
+    transition: all .25s ease-in-out;
+  }
+
+  > button {
+    z-index: z($index, footer);
+  }
+
+  &.playing {
+
+    img {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+
+    .help--instructions-play {
+      display: none;
+    }
+
+    &:hover {
+
+      .help--instructions-stop {
+        display: block;
+      }
+    }
+  }
+
+  &-play {
+    font-size: 25pt;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: z($index, footer);
+    width: 40pt;
+    height: 40pt;
+    line-height: 1.8em;
+    background-color: white;
+    border-radius: 99em;
+    @extend %dropshadow;
+    transition: all .25s ease-in-out;
+
+    &:hover {
+      transform: translate(-50%, -65%);
+
+      box-shadow: 0 0 4.55px 0.45px rgba(138,138,138, 0.25),
+                  0 2px 0 0 rgba(220,220,220, 0.52),
+                  0 10px 25px 0 rgba($black, 0.13)
+    }
+  }
+
+  &-play-2,
+  &-stop-2 {
+    position: absolute;
+    bottom: 8pt;
+    left: 10pt;
+    color: rgba($white, .2);
+  }
+
+  &-play-2 {
+    color: $white;
+  }
+
+  &-stop-2 {
+    left: 30pt;
+    pointer-events: none;
+  }
+
+  &.playing {
+
+    .help--instructions-stop-2 {
+      color: $white;
+      pointer-events: auto;
+    }
+
+    .help--instructions-play-2 {
+      color: rgba($white, .2);
+      pointer-events: none;
+    }
+  }
+
+  .btm-controls {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    left: 0;
+    width: 100%;
+    background-color: rgba($black, .2);
+    z-index: z($index, popovers);
+  }
+}

@@ -1,0 +1,92 @@
+.card-save {
+  background-color: rgba($white, .9);
+  border-radius: 2px;
+  color: get($color-buttons, confirm);
+  display: inline-block;
+  float: right;
+  font-weight: 700;
+  opacity: 0;
+  padding: .5rem 1rem;
+  text-align: center;
+  transition: 1s background-color;
+  width: 120px;
+  z-index: z($index, footer);
+
+  &::before {
+    font-family: 'Ionicons';
+    margin-right: .25em;
+  }
+
+  &.is-saved,
+  &.is-save-error,
+  &.is-unsaved,
+  &.is-saving {
+    box-shadow: 0 2px 3px rgba($black, .1);
+    opacity: 1;
+  }
+
+  &.is-saved {
+    animation: is-saved 2s forwards ease-in-out 1 2s;
+
+    &::before {
+      content: '\f122';
+    }
+
+    &::after {
+      content: 'Saved';
+    }
+  }
+
+  &.is-save-error {
+    background-color: get($color-theme, error);
+    color: $white;
+
+    &::before {
+      font-size: 13pt;
+      content: '\f2d7';
+    }
+
+    &::after {
+      content: 'Error';
+    }
+  }
+
+  &.is-unsaved {
+    background-color: get($color-theme, sidebar);
+    color: $white;
+
+    &::before {
+      content: '!';
+      font-size: 13pt;
+      font-weight: 600;
+      font-family: 'Proxima Nova', Helvetica, sans-serif;
+    }
+
+    &::after {
+      content: 'Unsaved';
+    }
+  }
+
+  &.is-saving {
+    background-color: get($color-theme, heading);
+    color: $white;
+
+    &::before {
+      animation: is-unsaved linear 1.5s infinite running;
+      content: '\f29d';
+      display: inline-block;
+      font-size: 110%;
+      height: 10pt;
+      line-height: normal;
+      margin-top: .18pt;
+      position: relative;
+      top: 1pt;
+      transform-origin: center center center;
+      width: 10pt;
+    }
+
+    &::after {
+      content: 'Saving';
+    }
+  }
+}

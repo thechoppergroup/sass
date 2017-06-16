@@ -1,0 +1,159 @@
+// sass-lint:disable-all
+
+/*
+= Unstyle List
+*/
+
+/**
+ * A list of extends
+ *
+ * @section Extends
+ * @sectionof Base
+ */
+
+/**
+ * Clear default styles of ordered and unordered lists
+ *
+ * @section Unstyle List
+ * @sectionof Base.Extends
+ *
+ * @usage @extend %unstylelist
+ *
+ * @example
+ * <ul class="unstyle">
+ *   <li>Lorem</li>
+ *   <li>Ipsum</li>
+ *   <li>Dolar</li>
+ *   <li>Itset</li>
+ * </ul>
+ *
+ * @code {scss}
+ * .className {
+ *   &#64;extend %unstylelist
+ * }
+ */
+
+
+%unstyle-list {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/*
+= Unstyle Web Kit
+*/
+%web-kit-unstyle {
+  -webkit-appearance: none;
+}
+
+/*
+= No Select
+*/
+
+%noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*
+= No Event
+*/
+
+%noevents {
+  pointer-events: none;
+}
+
+/*
+= CSS Layout
+*/
+
+%position- {
+  &-relative {
+    position: relative;
+  }
+
+  &-absolute {
+    position: absolute;
+  }
+
+  &-fixed {
+    position: fixed;
+  }
+
+  &-static {
+    position: static;
+  }
+}
+
+/*
+= Grid Gutters
+*/
+%gutter {
+  margin-left: -1rem;
+
+  > * {
+    padding-left: 1rem;
+  }
+}
+
+
+/*
+= Grid Gutters
+*/
+%fixed-centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*
+= Hide
+*/
+%hide {
+  margin: -1px !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip: rect(0, 0, 0, 0) !important;
+  position: absolute !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/*
+= Hide Visually
+*/
+%visuallyhidden {
+  &:not(.is-open) {
+    @extend %hide;
+  }
+}
+
+
+%scrollbar {
+  -ms-overflow-style: scrollbar;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, .02);
+  }
+}

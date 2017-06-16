@@ -1,0 +1,38 @@
+.notifications-grouped {
+  margin-top: 0;
+  background-color: rgba($black, .025);
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  border: thin solid rgba($black, .05);
+  border-top: 0;
+
+  .notifications-grouped-userSearch {
+    border-bottom: thin solid rgba($black, .05);
+    padding: 1rem;
+  }
+
+  .notifications-grouped-status {
+
+    > li {
+      border-bottom: thin solid rgba($black, .06);
+      margin: 0;
+      word-break: break-all;
+
+      div, label {
+        padding: 1rem;
+      }
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+
+      &:nth-child(odd) {
+        background-color: rgba($black, .025);
+      }
+
+      .flex-end {
+        border-left: thin solid rgba($black, .06);
+      }
+    }
+  }
+}

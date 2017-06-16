@@ -1,0 +1,18 @@
+.transition- {
+  transition:
+    transform .5s ease-in-out,
+    opacity .5s ease;
+
+  &-v {
+    &-up {
+      @extend .transition-;
+      opacity: 0;
+      transform: translate(0, 3rem);
+    }
+  }
+
+  &.is-open {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+}

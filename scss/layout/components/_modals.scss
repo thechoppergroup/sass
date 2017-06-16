@@ -1,0 +1,48 @@
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: $white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: z($index, modals);
+  margin-top: 0;
+  transform: translateY(-100%);
+  transition: transform .4s ease-in-out;
+  pointer-events: none;
+
+  .mobile & {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &.is-open {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .modal-close {
+    transform: translate(-1rem, 1rem);
+    z-index: z($index-modals, close);
+  }
+
+
+  .modal-container {
+    max-height: 100%;
+    overflow-y: auto;
+    padding-top: 1rem;
+
+    .desktop & {
+      padding-top: 4rem;
+    }
+
+    &:after {
+      content: '';
+      height: 3rem;
+      display: block;
+      width: 100%;
+    }
+  }
+}

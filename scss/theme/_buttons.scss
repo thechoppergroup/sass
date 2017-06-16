@@ -1,0 +1,795 @@
+%button-shadow {
+  box-shadow: 0 1.5px 6px 0.13px atl($black, 0.15), 0 3px 2px 0 atl($black, 0.02);
+}
+
+b {
+  &:hover {
+    color: get($color-buttons, 'add');
+    cursor: pointer;
+  }
+}
+
+%button-base {
+  cursor: pointer;
+  vertical-align: top;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+%button {
+  @extend %button-shadow;
+  border-radius: .25rem;
+  opacity: 1;
+  padding: 0 3rem;
+  position: relative;
+  text-shadow: 1px 1px 0 atl($black, .1);
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+
+  &:disabled {
+    opacity: .3;
+    transition-property: opacity;
+    cursor: not-allowed;
+
+    &:not(.show-title) {
+      pointer-events: none;
+    }
+  }
+
+  > i {
+    transition-duration: .25s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, box-shadow;
+    box-shadow: none;
+    text-shadow: 0 1px atl($white, 0.3);
+
+    + span {
+      display: none;
+
+      @include tablet {
+        display: inline-block;
+      }
+    }
+  }
+
+  &:hover {
+    text-shadow: -1px -1px 0 atl($black, .1);
+    box-shadow: none;
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &.facebook {
+    @include hover(get($color-social, facebook));
+  }
+
+  &.twitter {
+    @include hover(get($color-social, twitter));
+    color: $white;
+  }
+}
+
+.button--external {
+  color: get($color-buttons, 'external');
+}
+
+%add {
+  @extend %button;
+  background-color: get($color-buttons, 'add');
+  color: $white;
+  transition-property: color, background-color, box-shadow, opacity;
+
+  > i {
+    &:first-of-type {
+      background-color: transparent;
+      color: dark(get($color-buttons, 'add'), 60%);
+    }
+  }
+
+  &:hover {
+    background-color: dark(get($color-buttons, 'add'), 25%);
+  }
+}
+
+%alert {
+  color: get($color-buttons, warning) !important; // sass-lint:disable-line no-important
+  background-color: transparent;
+  border-radius: .1rem;
+  text-align: center;
+  height: 2.5rem !important; // sass-lint:disable-line no-important
+  width: 2.5rem !important; // sass-lint:disable-line no-important
+  line-height: 2.5rem !important; // sass-lint:disable-line no-important
+
+  .mobile & {
+    background-color: $white;
+    border-radius: 99rem !important; // sass-lint:disable-line no-important
+    line-height: 3rem !important; // sass-lint:disable-line no-important
+    height: 3rem !important; // sass-lint:disable-line no-important
+    width: 3rem !important; // sass-lint:disable-line no-important
+  }
+
+  &:before {
+    content: '\f100';
+    font-family: 'Ionicons';
+    margin: 0;
+  }
+
+  input {
+    &:checked + & {
+      color: $white !important; // sass-lint:disable-line no-important
+      background-color: get($color-buttons, warning) !important; // sass-lint:disable-line no-important
+    }
+  }
+}
+
+.button--add {
+  border-radius: 999rem;
+  line-height: 0;
+  min-width: 1.7rem;
+  transition: transform .25s ease-in-out;
+  transform: none;
+  will-change: transform;
+
+  > svg {
+    border-radius: 9999em;
+    fill: get($color-buttons, add);
+  }
+
+  &:hover > svg {
+    fill: dark(get($color-buttons, add), 25%);
+  }
+
+  &.is-open,
+  &.is-active {
+
+    > svg {
+      transform: rotate(135deg);
+      fill: dark(get($color-buttons, add), 25%);
+    }
+  }
+}
+
+.button--marker {
+  color: light(get($color-typography, page), 75%);
+  font-size: 1.2rem;
+  width: 1.5rem;
+  text-align: center;
+
+  i {
+    &::before {
+      content: '\f21b';
+      font-family: 'Ionicons';
+    }
+  }
+
+  &.is-complete {
+    color: light(get($color-buttons, confirm), 25%);
+
+    i {
+      &::before {
+        content: '\f120';
+      }
+    }
+  }
+
+  &.is-current {
+    color: get($color-typography, page);
+
+    i {
+      &::before {
+        content: '\f186';
+      }
+    }
+  }
+  &.is-current.is-complete {
+    color: get($color-buttons, confirm);
+
+    i {
+      &::before {
+        content: '\f187';
+      }
+    }
+  }
+}
+
+%cancel {
+  @extend %button;
+  background-color: get($color-buttons, cancel);
+  color: $white;
+  transition-property: background-color, box-shadow, opacity;
+
+  &:hover {
+    background-color: dark(get($color-buttons, cancel), 20%);
+    color: $white;
+  }
+}
+
+%cancelConfirm {
+  @extend %button;
+  padding: 0;
+
+  span {
+    display: block;
+    width: 0;
+    transition: all .25s ease-in-out;
+    position: absolute;
+    left: 0;
+  }
+
+  > i  {
+    &:last-child {
+      margin: 0;
+      background-color: $white;
+    }
+  }
+
+  &:hover {
+    padding-right: 6.5rem;
+    @extend %button-shadow;
+
+    span {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+%card-link {
+  transition: background-color .25s ease-in-out;
+  border-radius: .25rem;
+  font-weight: get($font-weights, semi-bold);
+  padding: 0 !important; // sass-lint:disable-line no-important
+  position: relative;
+
+  > i {
+    &:last-child {
+      margin-right: 0;
+      width: auto;
+      padding-left: .5rem;
+      padding-right: .5rem;
+      color: get($color-buttons, text);
+    }
+  }
+
+  &:hover {
+    background-color: get($color-buttons, text);
+
+    > i {
+      color: $white;
+    }
+  }
+}
+
+%confirm {
+  @extend %button;
+  background-color: get($color-buttons, confirm);
+  color: $white;
+  transition-property: color, background-color, box-shadow, opacity;
+
+  > i {
+    &:first-of-type {
+      background-color: transparent;
+      transition: border-right .5s ease-in-out;
+    }
+  }
+
+  &:hover {
+    background-color: dark(get($color-buttons, confirm), 25%, 30%);
+  }
+}
+
+%confirm_padded {
+  @extend %button;
+  @extend %confirm;
+  padding: 0 1.125rem !important; // sass-lint:disable-line no-important
+
+  > i {
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  > span {
+    padding: 0 !important; // sass-lint:disable-line no-important
+  }
+}
+
+%connect {
+  @extend %button;
+  color: $white;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+
+  > i {
+    &:first-child {
+      border-right: solid thin $white;
+      width: 3rem;
+    }
+  }
+
+  span {
+    margin-left: .5rem;
+    display: inline-block !important; // sass-lint:disable-line no-important
+  }
+
+  @each $name, $color in $color-social {
+    &.#{$name} {
+      background-color: $color;
+
+      &:hover {
+        background-color: dark($color, 10%);
+      }
+    }
+  }
+}
+
+%delete {
+  @extend %button;
+  background-color: get($color-buttons, delete);
+  color: $white;
+  transition: all .15s ease-in-out;
+
+  > i:first-of-type {
+    color: dark(get($color-buttons, delete), 50%);
+  }
+
+  &:hover {
+    background-color: dark(get($color-buttons, delete), 25%);
+  }
+}
+
+%dropdown {
+  @extend %button;
+  display: block;
+  min-width: 100% !important; // sass-lint:disable-line no-important
+  text-align: left;
+  transition: all .15s ease-in-out;
+  box-shadow: none;
+  border-radius: 0;
+  color: get($color-buttons, add);
+  text-shadow: none;
+
+  > i {
+    &:first-of-type {
+      color: dark(get($color-buttons, dropdown), 50%);
+    }
+  }
+
+  &:hover {
+    background-color: get($color-buttons, dropdown);
+    color: $white;
+  }
+}
+
+%edit {
+  color: get($color-buttons, cancel);
+  transition: background-color .25s ease-in-out;
+  border-radius: .25rem;
+
+  &:hover{
+    background-color: light(get($color-buttons, cancel), 20%);
+    color: $white;
+  }
+
+  &.is-editing {
+    background-color: dark(get($color-buttons, cancel), 20%);
+    color: $white;
+  }
+}
+
+%file {
+  @extend %cancel;
+  max-width: 100%;
+  padding: .75rem 2rem .5rem 2.3rem !important; // sass-lint:disable-line no-important
+  line-height: 1.75rem !important; // sass-lint:disable-line no-important
+  height: auto !important; // sass-lint:disable-line no-important
+  max-height: none !important; // sass-lint:disable-line no-important
+
+  > .button--file-name {
+    display: block;
+    font-size: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+    transform: translateY(3pt);
+    white-space: nowrap;
+  }
+
+  > .button--file-size {
+    display: block;
+    font-size: 7.5pt !important; // sass-lint:disable-line no-important
+    padding: 0;
+    position: absolute;
+    top: -1px;
+
+    .card--conversation & {
+      display: none;
+    }
+  }
+
+  .text--error {
+    &:empty {
+      display: none;
+    }
+  }
+
+  i {
+
+    &:first-child {
+      left: 0;
+    }
+
+    &:last-child {
+      right: 0;
+    }
+  }
+}
+
+%filter {
+  @extend %text;
+  padding: 0 .75rem !important; // sass-lint:disable-line no-important
+  border-radius: 99rem !important; // sass-lint:disable-line no-important
+
+  &.is-active {
+    background-color: get($color-buttons, text);
+    color: $white;
+  }
+}
+
+%footer {
+  color: get($color-buttons, footer);
+
+  &:before {
+    content: '';
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: solid .5rem transparent;
+    border-top-color: get($color-theme, questions-header);
+    position: absolute;
+    display: none;
+  }
+
+  &.is-current {
+    color: $white;
+
+    &:before {
+      display: block;
+    }
+  }
+
+  small {
+    font-size: 6pt;
+    font-weight: 700;
+  }
+}
+
+%logout {
+  @extend %button;
+  color: get($color-theme, graphics);
+  border-radius: .25rem;
+  color: $white;
+  box-shadow: none;
+
+  &:hover{
+    background-color: dark(get($color-buttons, cancel), 25%);
+  }
+}
+
+%messageCount {
+  background-color: get($color-theme, graphics);
+  border-radius: 99em;
+  color: $white;
+  font-weight: get($font-weights, bold);
+}
+
+%panel {
+  background-color: transparent;
+  color: dark($white, 70%);
+  width: 36px;
+
+  + small {
+    font-weight: bold;
+    line-height: 1em;
+    transform: translate(-3px, 3px);
+    color: $white;
+    pointer-events: none;
+  }
+
+  &.is-open {
+    color: $white;
+    background: $black;
+
+    + small {
+      color :$white;
+    }
+  }
+}
+
+%social {
+  border-radius: 999em;
+  box-shadow: 0 0 0 1px rgba(get($color-buttons, add), 1);
+  transition: background .25s ease-in-out;
+
+  &:hover {
+    background: get($color-buttons, add);
+    color: $white;
+  }
+
+  &:before {
+    vertical-align: middle;
+  }
+}
+
+%remove {
+  background-color: transparent;
+  color: get($color-buttons, remove);
+  transition: color .25s ease-in-out;
+  border-radius: $radius;
+
+  &:hover {
+    color: dark(get($color-buttons, delete), 20%);
+  }
+}
+
+%send {
+  min-width: 0 !important; // sass-lint:disable-line no-important
+  width: 2rem !important; // sass-lint:disable-line no-important
+  height: 2rem !important; // sass-lint:disable-line no-important
+  color: $white;
+  border-radius: 1rem;
+  display: block;
+  line-height: 1;
+  background-color: get($color-buttons, add);
+  text-align: center;
+  padding: 0;
+}
+
+%settings {
+  background-color: transparent;
+  color: get($color-buttons, settings);
+  transition: color .25s ease-in-out;
+  border: solid thin get($color-buttons, settings);
+  border-radius: $radius;
+  background-color: $white;
+  position: relative;
+
+  .privacy-settings:hover & {
+    border-color: transparent;
+    border-radius: $radius $radius 0 0;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 12px 13px 0 rgba(0, 0, 0, 0.09), 0 8px 13px 0 rgba(0, 0, 0, 0.09), 0 41px 59.15px 5.85px rgba(0, 0, 0, 0.09);
+  }
+}
+
+%text {
+  transition: background-color .25s ease-in-out;
+  color: get($color-buttons, text);
+  border-radius: .25rem;
+  font-weight: get($font-weights, medium);
+  border-radius: 0;
+  position: relative;
+
+  i {
+    padding: 0 !important; // sass-lint:disable-line no-important
+
+    + span {
+      margin-left: .25em;
+    }
+  }
+
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0 !important; // sass-lint:disable-line no-important
+
+    &:after {
+      content: '';
+      border-bottom: solid thin dark(get($color-buttons, text), 40%);
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      opacity: 0;
+      width: 0%;
+      transition: left .15s ease-in-out, width .15s ease-in-out;
+    }
+  }
+
+  .desktop & {
+    &:hover {
+      color: dark(get($color-buttons, text), 40%);
+      text-decoration: none;
+
+      span:after {
+        width: 100%;
+        left: 0%;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.toggle {
+    color: get($color-buttons, cancel);
+
+    &.is-current {
+      color: get($color-buttons, text);
+    }
+  }
+
+  .messager &:not(.is-open) {
+    color: get($color-buttons, cancel) !important; // sass-lint:disable-line no-important
+  }
+
+  .messager &.is-open {
+    color: get($color-theme, brand) !important;
+    pointer-events: none;
+    position: relative;
+
+    &:after {
+      content: '';
+      border: solid .5rem transparent;
+      border-bottom-color: rgba(black, 0.2);
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -.7rem);
+      display: block;
+    }
+  }
+}
+
+%social-button {
+  text-align: left;
+  display: block;
+  color: $white;
+  border-radius: .25rem;
+
+  i:first-child {
+    width: 3rem;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+%video {
+  max-width: 3em;
+  border: solid thin white;
+  line-height: 3rem;
+  background-color: rgba($white, 0.6);
+  box-shadow: 0 0 3px rgba($black, 0.3);
+  border-radius: 99em;
+  padding: 0 !important; // sass-lint:disable-line no-important
+  position: relative;
+
+  span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-right: 0 !important; // sass-lint:disable-line no-important
+    font-size: 5pt;
+    font-weight: get($font-weights, bold);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    line-height: 1.2em;
+    max-width: 100%;
+    white-space: normal;
+    display: block !important; // sass-lint:disable-line no-important
+  }
+
+  > i {
+    transform: translateY(-.1rem);
+    padding: 0 !important; // sass-lint:disable-line no-important
+  }
+
+  &:hover {
+    background-color: rgba($white, 1);
+  }
+}
+
+
+%facebook {
+  @extend %social-button;
+  background-color: get($color-social, facebook);
+
+  &:hover {
+    background-color: dark(get($color-social, facebook), 15%);
+  }
+}
+
+%twitter {
+  background-color: get($color-social, twitter);
+  @extend %social-button;
+
+  i:first-child {
+    float: left;
+  }
+
+  &:hover {
+    background-color: dark(get($color-social, twitter), 10%);
+  }
+}
+
+%google {
+  background-color: get($color-social, google);
+  @extend %social-button;
+
+  &:hover {
+    background-color: dark(get($color-social, google), 10%)
+  }
+
+  i {
+    border-right: solid thin light(get($color-social, google), 40%);
+  }
+}
+
+%accordion {
+  background-image: linear-gradient(0deg, rgb(241,241,241) 0%, rgb(253,253,253) 100%);
+  border-top: thin solid #e8e8e8;
+  color: rgba($black, .75);
+  text-align: left;
+
+  > i {
+    color: rgba($black, .4);
+    margin-right: 3pt;
+  }
+
+  &:hover {
+    background-image: linear-gradient(180deg, rgb(241,241,241) 0%, rgb(253,253,253) 100%);
+  }
+
+  &.is-open {
+    background-color: get($color-theme, brand);
+    background-image: none;
+    border-top: 0;
+    color: $white;
+
+    > i {
+      color: $white;
+    }
+  }
+}
+
+$buttons: (
+  accordion: accordion,
+  add: add,
+  alert: alert,
+  cardLink: card-link,
+  cancel: cancel,
+  cancelConfirm: cancelConfirm,
+  confirm: confirm,
+  confirm_padded: confirm_padded,
+  connect: connect,
+  delete: delete,
+  dropdown: dropdown,
+  edit: edit,
+  facebook: facebook,
+  file: file,
+  filter: filter,
+  footer: footer,
+  google: google,
+  logout: logout,
+  messageCount: messageCount,
+  panel: panel,
+  remove: remove,
+  send: send,
+  settings: settings,
+  social: social,
+  text: text,
+  twitter: twitter,
+  video: video
+);
+
+$button-heights: (
+  xs: $gutter,
+  sm: $gutter * 1.5,
+  md: $gutter * 2,
+  lg: $gutter * 3,
+);
+
+@include buttons-generator($buttons, $button-heights);

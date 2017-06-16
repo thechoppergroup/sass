@@ -1,0 +1,7 @@
+.svg--plus {
+  transition: transform .25s ease-in-out;
+
+  .is-open > & {
+    transform: rotate(135deg);
+  }
+}

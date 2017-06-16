@@ -1,0 +1,32 @@
+.commandsMenu {
+  @extend %dropshadow;
+  border-radius: .25rem;
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: .5rem;
+  left: 0;
+  z-index: z($index, popovers);
+  background-color: white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: .5rem;
+    border: solid .5rem transparent;
+    border-top-color: white;
+  }
+
+  .commandsMenu-header {
+    background-color: #fafafa;
+    padding: .5rem;
+    border-bottom: solid thin #eee;
+    color: get($color-theme, label);
+  }
+
+  .commandsMenu-commands {
+    padding-right: .5rem;
+    border-radius: .25rem;
+    padding-bottom: .1rem;
+  }
+}

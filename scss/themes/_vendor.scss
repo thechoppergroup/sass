@@ -1,0 +1,443 @@
+// sass-lint:disable-all
+
+.preview {
+  * {
+    margin-top: 0;
+  }
+}
+
+.slick-slide {
+  margin-top: 0;
+}
+
+// CloudSponge
+#fbBox {
+  max-width: 91% !important;
+  width: 550px !important;
+  left: 50% !important;
+  margin-left: -275px !important;
+  top: 5% !important;
+  height: 94% !important;
+  max-height: 90vh !important;
+  position: fixed !important;
+
+  .mobile & {
+    left: 4.5% !important;
+    margin-left: 0 !important;
+  }
+
+  #fbContentWrapper {
+    height: 95% !important;
+    width: 95% !important;
+    left: 2.5% !important;
+  }
+
+  #fbContent,
+  #cs_container_frame,
+  #cs_container {
+    height: 100% !important;
+  }
+
+  #brand {
+    display: none;
+  }
+}
+
+html:not(.app) {
+  overflow-y: hidden;
+}
+
+.select2-results__option {
+  margin-top: 0;
+}
+
+.select2-search {
+  margin-top: 0;
+}
+
+#show-contacts {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  #title {
+    margin-top: 0;
+  }
+
+  .source-logo {
+    position: relative;
+    img {
+      height: 32px;
+      width: 32px;
+      display: inline;
+    }
+    .text {
+      position: relative;
+      top: -19px;
+      font-size: 13pt;
+      font-weight: bold;
+    }
+    .subtext {
+      position: absolute;
+      left: 37px;
+      top: 18px;
+      margin-top: 0;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+
+  #contacts {
+    max-height: 67%;
+    margin-top: 39pt;
+    overflow-y: scroll;
+    border: 1px solid lighten($text-color, 60%);
+
+    @media (min-height: 601px) {
+      max-height: 70%;
+    }
+
+    #header {
+      position: fixed;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      top: 64pt;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      .check-all {
+        position: relative;
+        margin-top: 4pt;
+        display: inline-block;
+        &:before {
+          position: absolute;
+          content: 'Select:';
+          top: -4pt;
+        }
+        > a:nth-child(2) {
+          display: inline-block;
+          margin-left: 10pt;
+        }
+      }
+      .search {
+        background-color: transparent;
+        width: 75%;
+        height: 20pt;
+        overflow: hidden;
+        position: absolute;
+        box-shadow: none;
+        top: 0;
+        right: 0;
+        padding: 0;
+        max-height: auto;
+        input {
+          line-height: 1.5rem;
+          font-size: 11pt;
+          height: 20pt;
+          margin-right: 1pt;
+          width: 74% !important;
+          float: right;
+          border: 1px solid #ccc;
+        }
+      }
+    }
+
+    #scrolling-table {
+      margin-top: 0;
+
+      #contacts-table {
+        position: relative;
+        width: 100%;
+        border-spacing: 0;
+        overflow: hidden;
+
+        * {
+          margin: 0;
+        }
+
+        .row {
+          position: relative;
+          height: 29pt;
+          width: 100%;
+          font-size: 10pt;
+          overflow: hidden;
+          zoom: 1;
+
+          &:nth-child(2n) {
+            background-color: #e6e6e6;
+          }
+
+          .check {
+            position: relative;
+            // width: 18pt;
+            top: 7pt;
+            left: 4pt;
+          }
+
+          .name {
+            position: absolute;
+            margin-top: -.7pt;
+            left: 18pt;
+            font-weight: bold;
+          }
+
+          .email {
+            position: relative;
+            top: 6pt;
+            // left: 0;
+            left: 7pt;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .button_to {
+    height: 40px;
+    width: 45%;
+    float: right;
+    input.submit.submit-link {
+      background: $color-a url('https://res.cloudinary.com/chopper/image/upload/f_auto/v1456789672/Site%20Images/vendor/vendor-cloudsponge-send.png') center center no-repeat;
+      height: 40px;
+      width: 100%;
+      text-shadow: none;
+      box-shadow: none;
+      color: $text-color;
+      line-height: inherit;
+      border: 0;
+      font-size: 0;
+      transform: translateY(0);
+      color: $color-a;
+      border-radius: $radius;
+    }
+  }
+
+  #back_link.cancel {
+    background: white url('https://res.cloudinary.com/chopper/image/upload/f_auto/v1456789672/Site%20Images/vendor/vendor-cloudsponge-back.png') center center no-repeat;
+    height: 40px;
+    width: 45%;
+    float: left;
+    text-shadow: none;
+    box-shadow: none;
+    color: $text-color;
+    line-height: inherit;
+    border: 0;
+    border-radius: $radius;
+    border: 2px solid #ccc;
+    border-radius: $radius;
+    padding: 0 1.5rem;
+    font-size: 0;
+    color: lighten($text-color, 100%);
+  }
+
+  .button_to,
+  .cancel {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .cancel {
+    left: 0;
+  }
+
+  .button_to {
+    right: 0;
+  }
+}
+
+.upload-inst {
+  padding-left: 2rem;
+}
+
+#google_button {
+  text-align: center;
+
+  > div {
+    display: inline-block;
+  }
+}
+
+#fb-login-button {
+
+  .mobile & {
+    padding-top: .65rem;
+  }
+
+  > a img {
+    margin: 0 auto;
+    width: 186px;
+  }
+}
+
+.js-facebook-validation-error:empty {
+  display: none !important;
+}
+
+.js-google-validation-error:empty {
+  display: none !important;
+}
+
+.twitter-typeahead {
+  width: 100%;
+
+  .tt-menu {
+    background: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    margin-top: -3px;
+    padding-bottom: 3rem;
+    width: 100%;
+
+    @include tablet {
+      min-width: 520px;
+    }
+
+    .mobile & {
+      padding-bottom: 6rem;
+    }
+
+    .tt-dataset {
+      max-height: 390px;
+      overflow-y: scroll;
+
+      .mobile & {
+        max-height: 140px;
+      }
+
+      .tt-no-results {
+        background: #eee;
+        font-weight: 700;
+        padding: 1rem;
+        text-align: left;
+      }
+
+      .tt-spinner {
+        position: absolute;
+      }
+
+      .tt-header {
+        background: #fcfcfc;
+        border-top: solid thin #eee;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        padding: .25rem 1rem;
+      }
+
+      .tt-footer {
+        border-top: solid 1px get($color-theme, sidebar);
+        bottom: 0;
+        box-shadow: 0 -3px 2px rgba(0, 0, 0, .1);
+        left: 0;
+        margin-top: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+
+        p:not(.confirmation-sent) {
+          background-color: #fafafa;
+          font-weight: 600;
+          line-height: 3rem;
+          overflow: hidden;
+          padding: 0 0 0 .5rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .confirmation-sent {
+          background-color: $color-a;
+          color: $white;
+          flex: 1 0 auto;
+          height: auto;
+          width: auto;
+          padding: 0 .5rem;
+          line-height: 3em;
+          text-align: center;
+          pointer-events: none;
+
+          > h3 {
+            line-height: 3em;
+          }
+        }
+
+        p,
+        button {
+          flex: 1 0 auto;
+          padding: 0 .5rem;
+
+          .mobile & {
+            flex: 1 0 auto;
+            padding: 0 .5rem;
+          }
+        }
+
+        button:before {
+          font-size: 13pt;
+        }
+
+        .mobile & {
+          flex-wrap: wrap;
+
+          &.please-confirm {
+            bottom: -10.5pt;
+
+            .collapse {
+              line-height: 21px;
+              overflow: visible;
+              padding: .5rem;
+              white-space: normal;
+              width: 100%;
+            }
+
+            .resend-email {
+              background-color: get($color-theme, brand);
+              color: #fff;
+              display: inline-block;
+              float: right;
+            }
+          }
+        }
+
+        .resend-email:disabled {
+          display: none !important;
+        }
+      }
+
+      .tt-result {
+        cursor: pointer;
+        display: flex;
+        margin-top: 0;
+        padding: 1rem;
+
+        + .tt-result {
+          border-top: solid thin #efefef;
+        }
+
+        .tt-image {
+          margin-right: 1rem;
+        }
+
+        &:last-of-type {
+          padding-bottom: 30px;
+        }
+
+        &:hover,
+        &.tt-cursor {
+          background-image: linear-gradient(to bottom, #f8f8f8, #eee);
+        }
+      }
+    }
+  }
+}
+
+.picker {
+  margin-top: 0;
+}
+
+.picker__holder {
+  min-width: 250px !important;
+  right: 0;
+  outline: none;
+}
+
+.select2-selection__arrow, .select2-results {
+  margin: 0;
+}

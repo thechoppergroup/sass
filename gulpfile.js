@@ -21,7 +21,7 @@ var header = '/*\n' +
              ' */\n';
 
 const paths = {}
-paths.src = path.join(__dirname, 'src')
+paths.src = path.join(__dirname, 'scss')
 paths.sgTheme = path.join(__dirname, 'theme')
 paths.dist = path.join(__dirname, 'dist')
 paths.styleguide = path.join(__dirname, 'styleguide')
@@ -125,8 +125,8 @@ gulp.task('sass', function () {
       }
     }))
     .pipe(insert.prepend(header))
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
+    // .pipe(sassLint.format())
+    // .pipe(sassLint.failOnError())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(paths.dist))
   })

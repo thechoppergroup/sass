@@ -1,0 +1,215 @@
+.card {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+  border-radius: .25rem;
+  background-size: cover;
+  background-position: center top;
+
+  p {
+    word-break: break-word;
+  }
+
+  &.availableSurvey {
+    cursor: pointer;
+    transition: box-shadow .25s ease-in-out;
+
+    &:hover {
+      @extend %dropshadow;
+    }
+  }
+
+  .template-pages-company-surveys & {
+    position: relative;
+    background-size: auto;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+
+  :not(.is-editing-card) > & {
+    .card-delete {
+      @extend %hide;
+    }
+  }
+
+  .card-header {
+    margin: -1rem -1rem 0;
+    padding: .5rem;
+    border-radius: .5rem .5rem 0 0;
+  }
+
+  &--createQuestion {
+    @extend .card;
+    padding: 0;
+
+    &:hover {
+      box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
+    }
+
+    > div {
+      padding: 1rem;
+    }
+
+    div:first-child:hover {
+      cursor: pointer;
+    }
+  }
+
+  &--conversation {
+    @extend .card;
+    padding: 1rem 1rem 1.5rem;
+    height: calc(48vh - 2rem);
+    background-color: $white;
+    position: relative;
+
+    .card-main {
+      @extend %scrollbar;
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+      left: 1rem;
+      bottom: 6rem;
+      overflow-y: scroll;
+    }
+
+    .card-header {
+      border-bottom: solid thin lightgray;
+    }
+
+    .fileupload-buttonbar button span {
+      display: none;
+    }
+
+    .messager-advancedSearch-panel {
+      max-width: 25vw;
+    }
+
+    @include ie-11 {
+      .template-upload {
+        width: 100%;
+      }
+    }
+
+    .messager-resultCount {
+      width: 100%;
+      max-width: calc(100% - 8rem);
+      overflow: hidden;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+
+  &--onBoarding {
+    @extend %card;
+    @extend %fixed-centered;
+    padding: 0;
+    z-index: z($index, popovers);
+
+    > button {
+      transform: translate(50%, -50%);
+      border-radius: 50%;
+    }
+  }
+
+  &.card-notification {
+    overflow: hidden;
+    padding: 0;
+
+    input[type='checkbox'] {
+
+      ~ label {
+        border-left: thin solid #e2e2e2;
+        transition:
+        background-color .25s ease-in-out, transform .25s ease-in-out;
+
+        &:before {
+          transition: color .25s ease-in-out;
+        }
+      }
+
+      &:not(:checked) ~ label {
+        background-color: #f6f6f6;
+
+        .notifications-off {
+          display: none;
+        }
+
+        i:before {
+          color: #b2b2b2;
+        }
+      }
+
+      &:checked ~ label {
+        background-color: get($color-theme, brand);
+        color: $white;
+
+        .notifications-on {
+          display: none;
+        }
+
+        &:before {
+          color: $white !important;
+        }
+      }
+    }
+
+    .notification--controls {
+
+      .notification--control {
+        align-content: center;
+        text-align: center;
+        width: 6rem;
+
+        > * {
+          margin-top: 0;
+        }
+
+        .toggle {
+          flex-direction: column;
+          height: 100%;
+          justify-content: center;
+          width: 6rem;
+        }
+
+        label {
+          cursor: pointer;
+
+          p {
+            line-height: 10pt;
+          }
+
+          &:before {
+            display: block;
+            margin-right: 0;
+          }
+        }
+
+        &.notification--control-alert {
+
+          input:checked ~ .notification--control-audio {
+            display: none;
+          }
+        }
+
+        &.notification--control-audio {
+
+          label:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.notifications-enabled {
+  transform: translateY(0);
+  opacity: 1;
+
+  &.is-hidden {
+    transition: all .25s ease-in-out;
+    opacity: 0;
+  }
+
+  &.is-open {
+    opacity: 1;
+  }
+}

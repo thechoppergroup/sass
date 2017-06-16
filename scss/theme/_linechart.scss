@@ -1,0 +1,52 @@
+.linechart {
+  .linechart-gridlines {
+    stroke: #ededed;
+  }
+
+  .linechart-ylabel {
+    fill: #6D6D6D;
+    color: #6D6D6D;
+    font-size: 8pt;
+  }
+  .linechart-xlabel {
+    fill: #6D6D6D;
+    color: #6D6D6D;
+    font-size: 8pt;
+  }
+  .linechart-histogram {
+    stroke: get($color-theme, brand);
+    fill: get($color-theme, brand);
+  }
+  .linechart-hoverLine {
+    stroke: #E4E4E4;
+  }
+
+  @each $color in $chart-colors {
+    $i: index($chart-colors, $color);
+
+    @at-root .weekly-bars {
+      .bar--#{$i} {
+        stroke: $color;
+      }
+
+      .subbar--#{$i} {
+        fill: $color;
+      }
+    }
+
+    line.linechart-line--#{$i} {
+      stroke: $color;
+      stroke-width: 2;
+
+    }
+
+    circle.linechart-line--#{$i} {
+      fill: $color;
+    }
+
+    .linechart-label--#{$i} {
+      fill: $color;
+      font-size: 8.5pt;
+    }
+  }
+}

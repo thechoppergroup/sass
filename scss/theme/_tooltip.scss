@@ -1,0 +1,71 @@
+%tool-tip {
+  color: $white;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: .1rem;
+  font-size: 9pt;
+  font-weight: get($font-weights, bold);
+  letter-spacing: .1em;
+  line-height: 1.75rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  position: fixed;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: .5rem solid transparent;
+    position: absolute;
+    margin: 0;
+  }
+}
+
+.tool-tip--top {
+  @extend %tool-tip;
+  transform: translate(-50%, -3.25rem);
+
+  &:after {
+    border-top-color: rgba(0, 0, 0, 0.6);
+    transform: translate(-50%, 0);
+    left: 50%;
+    top: 100%;
+  }
+}
+
+.tool-tip--left {
+  @extend %tool-tip;
+  transform: translateX(-100%) translateX(-1.5rem) translateY(-50%);
+
+  &:after {
+    border-left-color: rgba(0, 0, 0, 0.6);
+    transform: translate(100%, -50%);
+    top: 50%;
+    right: 0;
+  }
+}
+
+.tool-tip--bottom {
+  @extend %tool-tip;
+  transform: translate(-50%, 1.5rem);
+
+  &:after {
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+    transform: translate(-50%, 0%);
+    left: 50%;
+    bottom: 100%;
+  }
+}
+
+
+.tool-tip--right {
+  @extend %tool-tip;
+  transform: translate(1.5rem, -50%);
+
+  &:after {
+    border-right-color: atl($black, 0.6);
+    transform: translate(-100%, -50%);
+    top: 50%;
+    left: 0;
+  }
+}

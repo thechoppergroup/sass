@@ -1,0 +1,215 @@
+/*
+ * Scoutahead Styles
+ * https://github.com/fs-webdev/fs-styles
+ */
+.olympics {
+  background: url("https://res.cloudinary.com/chopper/image/upload/v1468862799/Site%20Images/themes/olympics/sprinting-web.jpg") no-repeat right center;
+  background-size: cover;
+  background-attachment: fixed;
+  /* ----------- Functions ----------- */
+  /*
+= Unstyle List
+*/
+  /**
+ * A list of extends
+ *
+ * @section Extends
+ * @sectionof Base
+ */
+  /**
+ * Clear default styles of ordered and unordered lists
+ *
+ * @section Unstyle List
+ * @sectionof Base.Extends
+ *
+ * @usage @extend %unstylelist
+ *
+ * @example
+ * <ul class="unstyle">
+ *   <li>Lorem</li>
+ *   <li>Ipsum</li>
+ *   <li>Dolar</li>
+ *   <li>Itset</li>
+ * </ul>
+ *
+ * @code {scss}
+ * .className {
+ *   &#64;extend %unstylelist
+ * }
+ */
+  /*
+= Unstyle Web Kit
+*/
+  /*
+= No Select
+*/
+  /*
+= No Event
+*/
+  /*
+= CSS Layout
+*/
+  /*
+= Grid Gutters
+*/
+  /*
+= Grid Gutters
+*/
+  /*
+= Hide
+*/
+  /*
+= Hide Visually
+*/
+  /* ----------- Prefixer ----------- */
+  /* ----------- Base ----------- */
+  /* ----------- Interactive ----------- */
+  /* Hover States */
+  /* --------- Custom Media Quiries ----------- */
+  /* Custom Media Query */
+  /* Tablet */
+  /* Desktop/Wide Tablet */
+  /* Desktop */
+  /* ----------- iPhone 4 and 4S ----------- */
+  /* Portrait and Landscape */
+  /* Portrait */
+  /* Landscape */
+  /* ----------- iPhone 5 and 5S ----------- */
+  /* Portrait and Landscape */
+  /* Portrait */
+  /* Landscape */
+  /* ----------- iPhone 6 ----------- */
+  /* Portrait and Landscape */
+  /* Portrait */
+  /* Landscape */
+  /* ----------- iPhone 6+ ----------- */
+  /* Portrait and Landscape */
+  /* Portrait */
+  /* Landscape */
+  /* ----------- iPad mini ----------- */
+  /* Portrait and Landscape */
+  /* Portrait */
+  /* Landscape */
+  /* ----------- iPad 1 and 2 ----------- */
+  /* Portrait and Landscape */
+  /* Portrait */
+  /* Landscape */
+  /* ----------- iPad 3 and 4 ----------- */
+  /* Portrait and Landscape */
+  /* Portrait */
+  /* Landscape */
+  /* ----------- Non-Retina Screens ----------- */
+  /* ----------- Retina Screens ----------- */
+  /* ----------- Apple Watch ----------- */
+  /* ----------- Print ----------- */
+  /* ----------- Button ----------- */
+  /* ----------- Generators ----------- */ }
+  .olympics .olympics--results .olympics--results-result {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .olympics .olympics--results .olympics--results-details:not(.is-open) {
+    margin: -1px !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip: rect(0, 0, 0, 0) !important;
+    position: absolute !important;
+    visibility: hidden !important;
+    pointer-events: none !important; }
+  .olympics .olympics--card {
+    background: url("https://res.cloudinary.com/chopper/image/upload/v1468867423/Site%20Images/themes/olympics/honey_comb.png") no-repeat right -2rem #2a2833;
+    background-size: 212px 152px;
+    min-height: 18rem;
+    width: 28rem;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    transition: box-shadow .1s ease-in-out;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.05); }
+    @media (min-width: 1025px) {
+      .olympics .olympics--card {
+        cursor: pointer; }
+        .olympics .olympics--card:hover {
+          box-shadow: 0 0 0.25rem 0.25rem rgba(255, 255, 255, 0.05); } }
+    .olympics .olympics--card .olympics--card-link {
+      margin-top: auto; }
+      .olympics .olympics--card .olympics--card-link b {
+        margin-top: auto;
+        display: inline-block;
+        white-space: nowrap; }
+    .olympics .olympics--card.is-answered:after {
+      content: '\f122';
+      font-family: 'Ionicons';
+      font-size: 28pt;
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      line-height: 1em;
+      color: #d2d0da;
+      text-shadow: 0 -2pt #000000; }
+    .olympics .olympics--card.is-answered:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: atl(#000000, 0.4); }
+  .olympics .flipster__item--past .olympics--card .is-answered:after {
+    right: auto;
+    left: 1rem;
+    top: .25rem; }
+  .olympics .flipster__button {
+    margin: -1rem .5rem; }
+    .olympics .flipster__button svg polyline {
+      stroke: #ffffff; }
+  .olympics .olympics--coverflow {
+    margin-top: 7rem; }
+    .olympics .olympics--coverflow .olympics--coverflow-list {
+      text-align: center; }
+      .olympics .olympics--coverflow .olympics--coverflow-list .olympics--coverflow-list-item {
+        text-align: left; }
+  .olympics .olympics--results {
+    background-color: atl(#000000, 0.4);
+    padding: 2rem 1rem;
+    border-radius: .25rem;
+    color: #ffffff;
+    margin-top: 2rem;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(255, 255, 255, 0.05); }
+    @media (min-width: 769px) {
+      .olympics .olympics--results {
+        padding: 3rem 5rem; } }
+    .olympics .olympics--results .olympics--results-data {
+      font-size: 54pt;
+      font-family: 'Roboto Condensed', 'Proxima Nova', Helvetica, sans-serif;
+      font-weight: 600;
+      line-height: 4rem; }
+    .olympics .olympics--results .olympics--results-label {
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 700; }
+    .olympics .olympics--results .olympics--results-user {
+      transform: translate(0, -4rem); }
+      .olympics .olympics--results .olympics--results-user .olympics--results-user-name {
+        font-size: 24pt;
+        font-weight: 800; }
+      @media (min-width: 769px) {
+        .olympics .olympics--results .olympics--results-user {
+          transform: translate(3rem, -3rem); } }
+    .olympics .olympics--results .olympics--results-result {
+      cursor: pointer; }
+    .olympics .olympics--results .olympics--results-details {
+      padding: 1rem .25rem; }
+    .olympics .olympics--results .olympics--results-medal-silver {
+      color: #c0c0c0; }
+    .olympics .olympics--results .olympics--results-medal-gold {
+      color: #ffd700; }
+    .olympics .olympics--results .olympics--results-medal-bronze {
+      color: #cd7f32; }

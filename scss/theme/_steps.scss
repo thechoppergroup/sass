@@ -1,0 +1,106 @@
+.steps {
+  @extend %unstyle-list;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+
+  .mobile .modal-occupation & {
+    margin-bottom: 2rem;
+    width: 80vw;
+  }
+
+  .steps-step {
+    color: scale-color($white, $lightness: -10%);
+    display: block;
+    flex: 1;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+
+    &::after {
+      background-color: scale-color($white, $lightness: -10%);
+      content: '';
+      height: 2.5pt;
+      left: 50%;
+      position: absolute;
+      top: 19pt;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &::before {
+      align-items: center;
+      background-color: $white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2.5pt scale-color($white, $lightness: -10%) inset;
+      color: scale-color($white, $lightness: -10%);
+      content: '\f122';
+      display: block;
+      flex-direction: column;
+      font-family: 'Ionicons';
+      font-size: 16pt;
+      height: 40pt;
+      line-height: 42pt;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+      width: 40pt;
+      z-index: 3;
+    }
+
+    &.is-current {
+      color: $text-color;
+      font-weight: 600;
+
+      &::before {
+        box-shadow: 0 0 0 2.5pt $color-a inset;
+        color: $color-a;
+      }
+
+      &:not(:last-child)::after {
+        background: linear-gradient(to right, $color-a 0%, scale-color($white, $lightness: -10%) 100%);
+        background-color: $color-a;
+        content: '';
+        height: 2.5pt;
+        left: 100%;
+        margin-left: -50%;
+        position: absolute;
+        top: 19pt;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+
+    &.is-complete {
+      color: lighten($text-color, 40%);
+      font-weight: 500;
+
+      &::before {
+        box-shadow: 0 0 0 2.5pt $color-a inset;
+        color: $color-a;
+      }
+
+      &:not(:last-child)::after {
+        background-color: $color-a;
+        content: '';
+        height: 2.5pt;
+        position: absolute;
+        top: 19pt;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+
+    .steps-step--text {
+      display: block;
+      height: 3rem;
+      line-height: 1.2rem;
+    }
+
+    &:last-of-type::after {
+      display: none;
+    }
+  }
+}

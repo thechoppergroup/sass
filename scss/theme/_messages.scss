@@ -1,0 +1,133 @@
+.messages {
+  width: 100%;
+  height: calc(100% + 1);
+  overflow: hidden;
+  margin-top: 2rem;
+
+  > li {
+    padding: .5rem;
+    width: 100%;
+  }
+
+  > li:first-child {
+    margin-top: $gutter/4;
+  }
+
+  .messages-message-header {
+    font-size: 10pt;
+    line-height: 1rem;
+  }
+
+  .messages-message {
+    background-color: $white;
+    padding: 1rem .5rem;
+
+    &-expandBefore,
+    &-expandAfter {
+      background: get($color-buttons, add);
+      color: $white;
+      padding: .15rem 1rem;
+
+      &:hover {
+        background: dark(get($color-buttons, add), 25%);
+      }
+    }
+
+    &-expandBefore {
+      border-top: none;
+      border-radius: 0 0 .25rem .25rem;
+    }
+
+    &-expandAfter {
+      border-bottom: none;
+      border-radius: .25rem .25rem 0 0;
+    }
+
+    &.not-result > .message {
+      opacity: .4;
+
+      &:not(:hover) {
+        // opacity: .15;
+      }
+    }
+
+    &.is-search-hit,
+    &.not-result {
+      border-left: solid thin get($color-theme, graphics);
+      border-right: solid thin get($color-theme, graphics);
+      margin: 0;
+
+      &:hover {
+        background-color: $white;
+      }
+
+      .messages-message-controls {
+        display: none;
+      }
+    }
+
+    &.is-search-hit,
+    &.is-search-hit:hover {
+      background-color: #fafafa;
+    }
+
+    &.is-boundary-before {
+      border-top: solid thin get($color-theme, graphics);
+      border-radius: .5rem .5rem 0 0;
+      &:not(:first-of-type) {
+        margin-top: 2rem;
+      }
+    }
+
+    &.is-boundary-after {
+      border-bottom: solid thin get($color-theme, graphics);
+      border-radius: 0 0 .5rem .5rem;
+      padding-bottom: 2rem;
+    }
+
+    &.urgent-message {
+      background-color: get($color-theme, message-urgent);
+      border-radius: $radius;
+
+      &:hover {
+        background-color: dark(get($color-theme, message-urgent), 5%);
+      }
+    }
+
+    .messages-message-body {
+      font-size: 10pt;
+      margin-top: .1rem;
+      overflow-x: hidden;
+      word-break: break-word
+
+      img {
+        max-height: 100px;
+        max-width: 100%;
+      }
+
+      > span,
+      > a {
+        word-break: break-word;
+        word-wrap: break-word;
+      }
+    }
+
+    .messages-message-timestamp {
+      color: get($color-theme, label);
+      font-size: 92%;
+    }
+
+    .messages-message-controls {
+      opacity: 0;
+      top: .1rem;
+    }
+
+    &:hover  {
+      background-color: #fafafa;
+
+      .messages-message-controls {
+        opacity: 1;
+      }
+    }
+  }
+}

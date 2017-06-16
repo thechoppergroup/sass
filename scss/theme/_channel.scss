@@ -1,0 +1,150 @@
+$index-channel:
+  content,
+  panels,
+  messager,
+  toolbar;
+
+.channel {
+  top: get($heights, header-tablet);
+  padding-top: 2.5rem !important;
+  padding-bottom: 8rem !important;
+  padding-right: 4rem !important;
+  overflow-x: hidden;
+
+  &-container {
+    height: 100%;
+  }
+
+  &-content {
+    height: 100%;
+    margin-top: 0;
+    position: relative;
+    transition: .5s width ease-in-out;
+    width: 100%;
+    z-index: z($index-channel, content);
+
+    &-sleeve {
+      @extend %scrollbar;
+      position: absolute;
+      max-height: 100%;
+      bottom: 0;
+      overflow-y: scroll;
+      width: 100%;
+    }
+
+    &.has-open-right-panel {
+      width: calc(100% - 18rem);
+    }
+  }
+
+  &-mute {
+    &.is-muted > .channel-mute-off,
+    &:not(.is-muted) > .channel-mute-on {
+      @extend %hide;
+    }
+
+    .channel-mute-on {
+      color: get($color-buttons, add);
+    }
+
+    .channel-mute-off {
+      color: get($color-buttons, cancel);
+    }
+  }
+
+  &-notification {
+
+    > button {
+
+      &:not(.is-active) > i {
+
+        &:before {
+          content: '\f18b';
+        }
+      }
+    }
+  }
+
+  &-messager {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+    right: 1rem;
+    margin-top: 0;
+    z-index: z($index-channel, messager);
+  }
+
+  &-panel {
+    background-color: $white;
+    border: solid thin rgba($black, 0.1);
+    height: 100%;
+    max-height: calc(100% - 11rem);
+    min-height: 12rem;
+    margin-top: 0;
+    padding: 1rem;
+    position: absolute;
+    opacity: 1;
+    right: 3rem;
+    top: 3rem;
+    width: 18rem;
+    transform: translate(-.5rem, 0);
+    transition: transform .5s ease-in-out, opacity .5s ease .25s;
+    z-index: z($index-channel, panels);
+
+    &.is-hidden {
+      transform: translate(20rem, 0);
+      opacity: 0;
+    }
+  }
+
+  &-toolbar {
+    height: 2.5rem;
+    margin-top: 0;
+    z-index: z($index-channel, toolbar);
+
+    html:not(.mobile) & {
+      padding: 0 1rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    &-close {
+      @include layout(auto, .5rem);
+      text-align: center;
+      width: 3rem;
+      margin-top: 0;
+    }
+
+    &-item {
+      margin-left: -1px;
+
+      button {
+        border: solid thin transparent;
+        width: calc(3rem + 1px);
+        border-radius: 0 .25rem .25rem 0;
+      }
+
+      &.is-open {
+        button {
+          border: solid thin atl($black, 0.15);
+          border-left-color: $white;
+        }
+      }
+    }
+
+    &-menu {
+      position: absolute;
+      right: .5rem;
+      text-align: center;
+      top: 100%;
+      background-color: white;
+    }
+
+    &-name {
+      @include layout(1rem);
+      width: calc(100% - 10rem);
+    }
+  }
+}

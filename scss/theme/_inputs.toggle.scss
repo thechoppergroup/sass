@@ -1,0 +1,54 @@
+label {
+  @extend %noselect;
+}
+
+input[role='toggle-sibling'] {
+  display: none;
+}
+
+label,
+span {
+  &.toggle,
+  &.checked {
+    &:before {
+      font-family: 'Ionicons';
+      display: inline-block;
+      margin-right: .25em;
+      color: scale-color(get($color-theme, brand), $saturation: -100%, $lightness: 40%) !important;
+      transition: color .1s ease;
+      font-size: 10pt !important;
+
+      input[role='toggle-sibling']:checked ~ & {
+        color: get($color-theme, brand) !important;
+      }
+    }
+  }
+  &.toggle:before {
+    content: '\f153' !important;
+    input[role='toggle-sibling']:checked ~ & {
+      content: '\f154' !important;
+    }
+  }
+
+  &.checked:before {
+    content: '\f14e';
+    input[role='toggle-sibling']:checked ~ & {
+      content: '\f14d';
+    }
+  }
+
+  &.audio-toggle {
+    &:before {
+      font-family: 'Ionicons';
+      display: inline-block;
+      margin-right: .25em;
+      color: scale-color(get($color-theme, brand), $saturation: -100%, $lightness: 40%) !important;
+      transition: color .1s ease;
+      font-size: 10pt !important;
+
+      input[role='toggle-sibling']:checked ~ & {
+        color: get($color-theme, brand) !important;
+      }
+    }
+  }
+}

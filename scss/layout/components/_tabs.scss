@@ -1,0 +1,9 @@
+.tabs {
+  display: flex;
+  width: 100%;
+
+  > .tabs-tab {
+    flex: 1;
+    margin-top: 0;
+  }
+}

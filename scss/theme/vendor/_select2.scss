@@ -1,0 +1,8 @@
+// sass-lint:disable no-important
+
+.select2-selection__choice,
+.select2-selection__choice__remove {
+  background-color: get($color-buttons, remove) !important;
+  color: $white !important;
+  border: none !important;
+}

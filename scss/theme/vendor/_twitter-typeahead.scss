@@ -1,0 +1,43 @@
+.tt-menu {
+  @extend %dropshadow;
+  background-color: $white;
+  min-width: 100%;
+
+  button {
+    border-radius: 0;
+  }
+
+  strong {
+    line-height: 3rem;
+    text-align: center;
+    flex: 1;
+  }
+}
+
+.tt-footer {
+  @extend %dropshadow;
+  margin-top: 0;
+}
+
+.tt-result {
+  .card {
+    border-radius: 0;
+  }
+
+  &:hover {
+    background-color: get($color-theme, background);
+    cursor: pointer;
+  }
+}
+
+.tt-spinner {
+  text-align: center;
+  margin: 0 auto;
+  padding: .5rem 0;
+  vertical-align: middle;
+}
+
+.save-spinner {
+  display: inline-block;
+  white-space: nowrap;
+}

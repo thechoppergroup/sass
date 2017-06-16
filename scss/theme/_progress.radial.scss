@@ -1,0 +1,30 @@
+$progress-radius: 20;
+$pie: 3.14;
+$stroke-width: 5;
+$stroke-increment: 1;
+
+.radialBackground {
+  // r: $progress-radius;
+  // cx: $progress-radius + $stroke-width/2;
+  // cy: $progress-radius + $stroke-width/2;
+  stroke: scale-color(get($color-theme, graphics), $lightness: 75%);
+  stroke-width: $stroke-width;
+}
+
+.radialBar {
+  // r: $progress-radius;
+  // cx: $progress-radius + $stroke-width/2;
+  // cy: $progress-radius + $stroke-width/2;
+  stroke: get($color-theme, brand);
+  stroke-width: $stroke-width;
+  stroke-dasharray: 2 * $pie * $progress-radius;
+  // transform: rotate(-90deg);
+  // -webkit-transform-origin: 50% 50%;
+  // transition: stroke-dashoffset .25s ease-in-out;
+
+  @for $i from 0 through 100/$stroke-increment {
+    &[data-percentage='#{$i*$stroke-increment}'] {
+      stroke-dashoffset: (2 * $pie * $progress-radius) - ($i*$stroke-increment*(2 * $pie * $progress-radius))/100;
+    }
+  }
+}

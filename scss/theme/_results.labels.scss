@@ -1,0 +1,37 @@
+.resultsLabels {
+  padding-left: .5rem;
+
+  .resultsLabels-label {
+    margin: 0;
+    height: 10px;
+    line-height: 10px;
+    font-size: 8pt;
+    font-weight: 700;
+    color: scale-color($black, $lightness: 60%);
+    white-space: nowrap;
+
+    @include media(360px) {
+      font-size: 8pt;
+      letter-spacing: 0em;
+    }
+
+    span {
+      display: inline-block;
+      min-width: 4em;
+      margin-right: .25rem;
+    }
+
+    &.self {
+      color: get($color-theme, brand);
+    }
+
+    &.others {
+      color: scale-color(get($color-theme, error), $lightness: 55%);
+
+    }
+
+    &.group {
+      color: $color-a;
+    }
+  }
+}

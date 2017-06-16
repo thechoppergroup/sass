@@ -1,0 +1,69 @@
+.tray {
+  margin-top: 0;
+  position: fixed;
+  z-index: z($index, trays);
+  transition: transform .25s ease-in-out;
+  background-color: $tray;
+
+  &--top {
+    @extend .tray;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+
+    &.is-open {
+      transform: translateY(0);
+    }
+  }
+
+  &--right {
+    @extend .tray;
+    top: get($heights, header-tablet);
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    width: 18rem;
+
+    .mobile & {
+      top: get($heights, header-mobile);
+      width: 100%;
+    }
+
+    &.s--contactsTray {
+      width: 30rem;
+    }
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+    &.partially-open {
+      transform: translateX(calc(100% - 41px));
+    }
+  }
+
+  &--bottom {
+    @extend .tray;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+
+  &--left {
+    @extend .tray;
+    top: $height-header;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+}

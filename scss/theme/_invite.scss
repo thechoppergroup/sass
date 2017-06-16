@@ -1,0 +1,22 @@
+.profile-brand {
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  margin: -1rem -1rem 0;
+  background: url('https://res.cloudinary.com/chopper/image/upload/s---R74N21t--/f_auto/v1452896083/Site%20Images/cloud_connect.jpg') right top no-repeat;
+  background-size: 100% auto;
+
+  .profile-pic {
+    height: 100px;
+    width: 100px;
+    margin: 2rem auto 0;
+    display: block;
+    border-radius: 9999em;
+    @extend %dropshadow;
+    border: 3px solid white;
+
+    .mobile & {
+      margin-top: 0;
+    }
+  }
+}

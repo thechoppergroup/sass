@@ -1,0 +1,6 @@
+.footerMenu- {
+  &-dark {
+    z-index: z($index, footer);
+    background-color: get($color-theme, footer);
+  }
+}

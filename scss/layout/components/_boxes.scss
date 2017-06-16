@@ -1,0 +1,64 @@
+.box {
+  max-width: 100%;
+  flex-basis: 100%;
+}
+
+@include desktop {
+
+  /* One */
+  .box:only-child {
+  	flex-basis: 100%;
+    height: calc(48vh - 2rem);
+    z-index: 1;
+  }
+
+  /* Two */
+  .box:first-child:nth-last-child(2) ~ .box, .box:first-child:nth-last-child(2) {
+  	flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  /* Three */
+  .box:first-child:nth-last-child(3) ~ .box, .box:first-child:nth-last-child(3) {
+  	flex-basis: 33.333333333%;
+    max-width: 33.333333333%;
+  }
+
+  /* Four */
+  .box:first-child:nth-last-child(4) ~ .box, .box:first-child:nth-last-child(4) {
+  	flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  /* Five, eight, eleven, ... */
+
+  /* First two are half-sized (99% / 2) */
+  .box:first-child:nth-last-child(3n+5) ~ .box, .box:first-child:nth-last-child(3n+5) {
+  	flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  /* Last n - 2 are (98% / 3) */
+  .box:first-child:nth-last-child(3n+5) + .box ~ .box {
+  	flex-basis: 33.333333333%;
+    max-width: 33.333333333%;
+  }
+
+  /* Six, nine, twelve, ... are all (98% / 3) */
+  .box:first-child:nth-last-child(3n+6) ~ .box, .box:first-child:nth-last-child(3n+6) {
+  	flex-basis: 33.333333333%;
+    max-width: 33.333333333%;
+  }
+
+  /* First four are half-sized (99% / 2) */
+  .box:first-child:nth-last-child(3n+7) ~ .box, .box:first-child:nth-last-child(3n+7) {
+  	flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  /* Last n - 4 are (98% / 3) */
+  .box:first-child:nth-last-child(3n+7) + .box + .box + .box ~ .box {
+  	flex-basis: 33.333333333%;
+    max-width: 33.333333333%;
+  }
+}

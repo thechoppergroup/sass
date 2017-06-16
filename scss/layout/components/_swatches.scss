@@ -1,0 +1,22 @@
+@each $name, $value in $color-wheel {
+  $values: map-values($color-wheel);
+  $i: index($values, $value);
+
+  .c--#{$name} {
+    color: $value;
+    background-color: $value;
+
+    @at-root [class*='button--']#{&} {
+      color: $white !important;
+      background-color: $value;
+    }
+  }
+}
+
+.swatch- {
+  &-md {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
+}

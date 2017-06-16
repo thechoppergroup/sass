@@ -1,0 +1,11 @@
+.menu- {
+  &-popup {
+    @extend %dropshadow;
+    border-radius: .5rem;
+    padding: 0 1rem;
+
+    &:after {
+      right: 1.7rem;
+    }
+  }
+}

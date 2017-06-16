@@ -1,0 +1,17 @@
+.occupationReview {
+
+  .occupationReview-task {
+
+    + .occupationReview-task {
+      padding-top: 1rem;
+      border-top: solid thin lightgray;
+    }
+
+    .occupationReview-task-text {
+
+    }
+
+    .occupationReview-task-occupation {
+    }
+  }
+}

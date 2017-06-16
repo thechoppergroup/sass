@@ -1,0 +1,26 @@
+.profileImage- {
+  border-radius: 999rem;
+  box-sizing: border-box;
+  height: auto;
+
+  &-lg {
+    @extend .profileImage-;
+    max-width: 100px;
+  }
+
+  &-md {
+    @extend .profileImage-;
+    max-width: 75px;
+  }
+
+  &-sm {
+    @extend .profileImage-;
+    max-width: 40px;
+  }
+
+  &-xs {
+    @extend .profileImage-;
+    width: 25px;
+    height: 25px;
+  }
+}

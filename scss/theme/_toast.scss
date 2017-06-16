@@ -1,0 +1,38 @@
+.toasts {
+  color: get($color-typography, page);
+
+  .error {
+    color: get($color-theme, error);
+  }
+
+  .urgent-message {
+    &:before {
+      font-size: 2.5rem;
+      margin: .5rem .5rem 0 0;
+      color: get($color-theme, brand);
+    }
+  }
+
+  &-close {
+    color: get($color-buttons, cancel);
+  }
+
+  &-message {
+    &--channel {
+      display: block;
+      padding-right: 5pt;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.spinner {
+  .background {
+    fill: get($color-theme, disabled);
+  }
+
+  .progress {
+    fill: get($color-theme, brand);
+  }
+}

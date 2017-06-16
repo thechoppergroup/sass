@@ -1,0 +1,185 @@
+// save.scss
+@keyframes is-saved {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// Fade
+@keyframes fadeOut {
+    0% {
+      opacity: 0;
+    }
+
+    1% {
+      opacity: 1;
+    }
+
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+
+@keyframes is-unsaved {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// tooltip.scss
+@keyframes dropIn {
+
+  from {
+		transform: translateY(-20px);
+	}
+
+  to {
+		transform: translateY(-5px);
+	}
+}
+
+// password_strength.scss
+@keyframes finished-progressbar {
+
+  0% {
+    width: 80pt;
+  }
+
+  80% {
+    opacity: 1;
+    width: 0;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@keyframes finished-icon {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// spinner.scss
+@-webkit-keyframes ball-spin-clockwise {
+
+  0%,
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@-moz-keyframes ball-spin-clockwise {
+
+  0%,
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    -moz-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@-o-keyframes ball-spin-clockwise {
+
+  0%,
+  100% {
+    opacity: 1;
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@keyframes ball-spin-clockwise {
+
+  0%,
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+// survey.scss
+@keyframes slideRight {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(2rem);
+  }
+
+  51% {
+    transform: translateX(-2rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

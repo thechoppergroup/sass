@@ -1,0 +1,11 @@
+.survey {
+  .survey-overlay {
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    transition-delay: .15s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

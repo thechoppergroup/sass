@@ -1,0 +1,53 @@
+.icon- {
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+
+  &-xxs {
+    @extend .icon-;
+    font-size: 9pt;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    min-width: 1.2rem;
+  }
+
+  &-xs {
+    @extend .icon-;
+    font-size: 11pt;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    min-width: 1.2rem;
+  }
+
+  &-sm {
+    @extend .icon-;
+    font-size: 14pt;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    min-width: 1.5rem;
+  }
+
+  &-md {
+    @extend .icon-;
+    font-size: 16pt;
+    height: 2rem;
+    line-height: 2rem;
+    min-width: 2rem;
+  }
+
+  &-lg {
+    @extend .icon-;
+    font-size: 21pt;
+    height: 3rem;
+    line-height: 3rem;
+    min-width: 3rem;
+  }
+
+  &-xl {
+    @extend .icon-;
+    font-size: 32pt;
+    height: 4rem;
+    line-height: 4rem;
+    min-width: 4rem;
+  }
+}
