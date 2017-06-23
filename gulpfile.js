@@ -23,11 +23,6 @@ const strip = require('gulp-strip-comments')
 const styleguide = require('gulp-styleguide')
 const uglify = require('gulp-uglify')
 
-var header = '/*\n' +
-             ' * Scoutahead Styles\n' +
-             ' * https://github.com/fs-webdev/fs-styles\n' +
-             ' */\n';
-
 // Directory Paths
 const paths = {}
 paths.src = path.join(__dirname, 'src')
@@ -176,7 +171,6 @@ gulp.task('sass', function () {
         ignore: 'src/bower_components/**/*.s+(a|c)ss'
       }
     }))
-    .pipe(insert.prepend(header))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
     .pipe(sass().on('error', sass.logError))

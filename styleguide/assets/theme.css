@@ -226,19 +226,6 @@ a {
       font-weight: 400; }
       .sg--main .sg--child-heading + .sg--description {
         margin-top: .5rem; }
-  .sg--main .sg--grand-child {
-    margin-top: 4rem; }
-    .sg--main .sg--grand-child .sg--child-header {
-      position: relative;
-      padding: .5rem 0; }
-      .sg--main .sg--grand-child .sg--child-header:before {
-        display: none; }
-    .sg--main .sg--grand-child .sg--child-heading {
-      color: #7d7d82;
-      font-size: 19pt;
-      font-weight: 400; }
-      .sg--main .sg--grand-child .sg--child-heading + .sg--description {
-        margin-top: .5rem; }
   .sg--main .sg--usage {
     background-color: #f7f7f7;
     display: block;

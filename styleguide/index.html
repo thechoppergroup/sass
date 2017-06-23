@@ -55,64 +55,6 @@
 
     <main class="sg--main collapse">
 
-      <article class="sg--parent js-base js-waypoint" id="base" data-section="base">
-        <a href="#base" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
-        <h2 class="sg--parent-heading">Base</h2>
-
-        <div class="sg--description"><p>This is a list of currated helpers and extends to utilize in writing DRY SCSS</p></div>
-
-
-
-
-<article class="sg--child js-base-extends js-waypoint" id="_base-extends" data-section="base-extends">
-
-  <div class="sg--child-header">
-
-    <a href="#base-extends" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
-    <h2 class="sg--child-heading">Extends</h2>
-
-    <div class="sg--description"><p>A list of extends</p></div>
-
-  </div>
-
-
-
-</article>
-
-<article class="sg--grand-child js-base-extends-unstyle-list js-waypoint" id="base-extends_base-extends-unstyle-list" data-section="base-extends-unstyle-list">
-  <a href="#base-extends-unstyle-list" class="sg--section-anchor collapse"><i class="ion-link"></i></a><article class="sg--child js-base-extends-unstyle-list js-waypoint" id="_base-extends-unstyle-list" data-section="base-extends-unstyle-list">
-
-  <div class="sg--child-header">
-
-    <a href="#base-extends-unstyle-list" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
-    <h3 class="sg--child-heading">Unstyle List</h3>
-
-    <div class="sg--description"><p>Clear default styles of ordered and unordered lists</p></div>
-
-  </div>  <div class="sg--usage origin">@extend %unstylelist</div>
-
-<livingcss-example><ul class="unstyle">
-  <li>Lorem</li>
-  <li>Ipsum</li>
-  <li>Dolar</li>
-  <li>Itset</li>
-</ul></livingcss-example>
-
-
-<div class="sg--markup">
-  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-base-extends-unstyle-list">
-  <label for="sg--codeToggle-base-extends-unstyle-list"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
-  <pre class="sg--code"><code class="language-scss">.className {
-  @extend %unstylelist
-}</code></pre>
-</div>
-
-</article>
-
-</article>
-
-
-      </article>
       <article class="sg--parent js-global-variables js-waypoint" id="global-variables" data-section="global-variables">
         <a href="#global-variables" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
         <h2 class="sg--parent-heading">Global Variables</h2>
@@ -139,7 +81,41 @@
 <div class="sg--markup">
   <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-breakpoints">
   <label for="sg--codeToggle-global-variables-breakpoints"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
-  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+  <pre class="sg--code"><code class="language-scss">$breakpoints: (
+  &#x27;iphone_4&#x27;: (
+    &#x27;min&#x27;: 320px,
+    &#x27;max&#x27;: 480px
+  ),
+  &#x27;iphone_5&#x27;: (
+    &#x27;min&#x27;: 320px,
+    &#x27;max&#x27;: 568px
+  ),
+  &#x27;iphone_6&#x27;: (
+    &#x27;min&#x27;: 375px,
+    &#x27;max&#x27;: 667px
+  ),
+  &#x27;iphone_6_plus&#x27;: (
+    &#x27;min&#x27;: 414px,
+    &#x27;max&#x27;: 736px
+  ),
+  &#x27;ipad_min&#x27;: (
+    &#x27;min&#x27;: 768px,
+    &#x27;max&#x27;: 1024px
+  ),
+  &#x27;ipad_1_2&#x27;: (
+    &#x27;min&#x27;: 768px,
+    &#x27;max&#x27;: 1024px
+  ),
+  &#x27;ipad_3_4&#x27;: (
+    &#x27;min&#x27;: 768px,
+    &#x27;max&#x27;: 1024px
+  ),
+  &#x27;apple_watch&#x27;: (
+    &#x27;min&#x27;: 42mm,
+    &#x27;max&#x27;: 38mm
+  )
+);
+</code></pre>
 </div>
 
 </article>
@@ -161,7 +137,7 @@
 <div class="sg--markup">
   <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-color-base">
   <label for="sg--codeToggle-global-variables-color-base"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
-  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+  <pre class="sg--code"><code class="language-scss">vars/&#x27;_color-base.scss&#x27;</code></pre>
 </div>
 
 </article>
@@ -341,7 +317,23 @@
 <div class="sg--markup">
   <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-color-wheel">
   <label for="sg--codeToggle-global-variables-color-wheel"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
-  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+  <pre class="sg--code"><code class="language-scss">// sass-lint:disable no-color-keywords
+
+$color-wheel: (
+  yellow: #f7ec1f,
+  yellow-orange: #ffd108,
+  orange: #faa71a,
+  red-orange: #f47c20,
+  red: #ee2c24,
+  red-violet: #ed2490,
+  violet: #7f4098,
+  blue-violet: #2e429b,
+  blue: #2077bd,
+  blue-green: #00b2d7,
+  green: #21b24b,
+  yellow-green: #85c441
+);
+</code></pre>
 </div>
 
 </article>
@@ -363,7 +355,21 @@
 <div class="sg--markup">
   <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-font-weights">
   <label for="sg--codeToggle-global-variables-font-weights"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
-  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+  <pre class="sg--code"><code class="language-scss">$font-weights: (
+  thin: 100,
+  hairline: 100,
+  extra-light: 200,
+  light: 300,
+  normal: 400,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  demi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  black: 900 // sass-lint:disable-line no-color-keywords
+);
+</code></pre>
 </div>
 
 </article>
@@ -568,11 +574,6 @@
     <aside class="sg--sidebar js-sidebar" id="sidebar">
 
       <ul class="sg--sidebar-menu unstyle js-sidemenu">
-        <li class="parent js-base"><a href="#base" data-section="base">Base</a>
-          <ul class="unstyle">
-            <li class="origin js-base-extends"><a href="#base_base-extends">Extends</a></li>
-          </ul>
-        </li>
         <li class="parent js-global-variables"><a href="#global-variables" data-section="global-variables">Global Variables</a>
           <ul class="unstyle">
             <li class="origin js-global-variables-breakpoints"><a href="#global-variables_global-variables-breakpoints">Breakpoints</a></li>
