@@ -2,6 +2,7 @@ var Js = require('js-');
 var $ = require('jquery');
 var path = require('path');
 var Waypoints = require('./noframework.waypoints.js');
+var prism = require('./prism.js');
 
 window.js = new Js();
 
@@ -27,19 +28,19 @@ js.lib.waypoint = function () {
 };
 
 js.lib.header = function () {
-  fixPosition(this, 60)
+  fixPosition(this, 60);
 
   window.addEventListener('scroll', function (e) {
-    fixPosition(this, 60)
-  }.bind(this))
+    fixPosition(this, 60);
+  }.bind(this));
 };
 
 js.lib.sidebar = function () {
-  fixPosition(this, 60)
+  fixPosition(this, 60);
 
   window.addEventListener('scroll', function (e) {
-    fixPosition(this, 60)
-  }.bind(this))
+    fixPosition(this, 60);
+  }.bind(this));
 };
 
 function fixPosition (el, offset) {
@@ -47,8 +48,8 @@ function fixPosition (el, offset) {
   var el = $(el);
 
   if (window.scrollY + offset > window.innerHeight) {
-    $(el).addClass('is-fixed')
+    $(el).addClass('is-fixed');
   } else {
-    $(el).removeClass('is-fixed')
+    $(el).removeClass('is-fixed');
   }
 }
