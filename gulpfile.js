@@ -15,11 +15,6 @@ const styleguide = require('gulp-styleguide')
 const gulpif = require('gulp-if')
 const insert = require('gulp-insert');
 
-var header = '/*\n' +
-             ' * Scoutahead Styles\n' +
-             ' * https://github.com/fs-webdev/fs-styles\n' +
-             ' */\n';
-
 const paths = {}
 paths.src = path.join(__dirname, 'scss')
 paths.sgTheme = path.join(__dirname, 'theme')
@@ -28,10 +23,13 @@ paths.styleguide = path.join(__dirname, 'styleguide')
 paths.template = path.join(__dirname, 'template')
 paths.bower = path.join(__dirname, 'bower_components')
 paths.partials = path.join(paths.template, 'partials')
+paths.styleguideAssets = path.join(paths.styleguide, 'assets')
+paths.theme = path.join(__dirname, 'theme')
 
 const patterns = {}
 patterns.scss = '**/*.s+(a|c)ss'
 patterns.hbs = '**/*.hbs'
+patterns.sassIgnore = path.join(paths.src, 'bower_components/**/*..s+(a|c)ss')
 
 const files = {}
 files.hbs = path.join(paths.template, patterns.hbs)
@@ -39,12 +37,7 @@ files.sgTheme = path.join(paths.sgTheme, patterns.scss)
 files.scss = path.join(paths.src, patterns.scss)
 files.sassIgnore = path.join(paths.bower, patterns.scss)
 files.templatePartials = path.join(paths.partials, patterns.hbs)
-
-paths.styleguideAssets = path.join(paths.styleguide, 'assets')
-paths.sassIgnore = path.join(paths.src, 'bower_components/**/*..s+(a|c)ss')
-
-paths.theme = path.join(__dirname, 'theme')
-paths.themeSass = path.join(paths.theme, 'theme.scss')
+files.themeSass = path.join(paths.theme, 'theme.scss')
 
 gulp.task('livingcss', function () {
   gulp.src([files.scss, '!' + files.sassIgnore])
@@ -115,7 +108,7 @@ gulp.task('theme', function() {
 });
 
 gulp.task('sass', function () {
-  console.log(paths.sassIgnore)
+  console.log(patterns.sassIgnore)
   return gulp
     .src(files.scss)
     .pipe(sassLint({
@@ -124,7 +117,6 @@ gulp.task('sass', function () {
         ignore: 'src/bower_components/**/*.s+(a|c)ss'
       }
     }))
-    .pipe(insert.prepend(header))
     // .pipe(sassLint.format())
     // .pipe(sassLint.failOnError())
     .pipe(sass().on('error', sass.logError))
