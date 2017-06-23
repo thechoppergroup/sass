@@ -88,6 +88,30 @@ gulp.task('livingcss', function () {
                 }
             })
 
+            Handlebars.registerHelper('toRGB', function(hex) {
+
+                function hexToRgb(hex) {
+                    // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+                    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+                    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+                        return r + r + g + g + b + b;
+                    });
+
+                    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                    return result ? {
+                        r: parseInt(result[1], 16),
+                        g: parseInt(result[2], 16),
+                        b: parseInt(result[3], 16)
+                    } : null;
+                }
+
+                function rgb(value) {
+                  var merged = '(' + hexToRgb(value).r + ', ' + hexToRgb(value).g + ', ' + hexToRgb(value).b + ')';
+                  return merged;
+                }
+                return rgb(hex);
+            })
+
             return livingcss.utils.readFileGlobs(files.templatePartials, function (data, file) {
                 var partialName = path.basename(file, path.extname(file))
                 Handlebars.registerPartial(partialName, data)
