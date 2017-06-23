@@ -12,7 +12,7 @@
 
 <body class="{{id}}">
 
-  <header class="sg--mast" id="mast">
+  <header class="sg--mast js-header" id="mast">
     <div class="sg--logo collapse">
       {{> logo }}
     </div>
@@ -73,7 +73,7 @@
 
     </main>
 
-    <aside class="sg--sidebar" id="sidebar">
+    <aside class="sg--sidebar js-sidebar" id="sidebar">
 
       <ul class="sg--sidebar-menu unstyle js-sidemenu">
       {{#each sections}}
@@ -94,79 +94,6 @@
   <footer class="sg--footer">
     <p>{{footerHTML}}</p>
   </footer>
-
-  {{#each scripts}}
-  <script type="text/javascript" src="{{this}}"></script>
-  {{/each}}
-
-  <script>
-    var waypoints = document.querySelectorAll('.js-waypoint');
-    var className = "is-active";
-    var links = document.querySelectorAll('[href^="#"]');
-    if (waypoints.length !== 0) {
-      Array.prototype.forEach.call(waypoints, function (waypoint, index) {
-        waypoint.wp = new Waypoint({
-          element: waypoint,
-          handler: function(direction) {
-            Array.prototype.forEach.call(links, function (link, index) {
-              var ids = waypoint.id.split('_');
-
-              if(link.getAttribute('href') === ('#' + ids[0]) || link.getAttribute('href') === ('#' + waypoint.id)) {
-                $(link).parent().addClass(className)
-              } else {
-                $(link).parent().removeClass(className)
-              }
-            })
-          }
-        })
-      })
-    }
-
-    $(document).ready(function () {
-      var scrollPos = $(document).scrollTop;
-      var windowHeight = window.innerheight;
-      const sidebar = $('#sidebar');
-      const mast = $('#mast');
-
-      if(scrollPos > windowHeight) {
-        mast.addClass('is-fixed');
-      }
-
-      var mastWayPoints = new Waypoint({
-        element: mast,
-        handler: function(direction) {
-          if (direction === 'down') {
-            mast.addClass('is-fixed')
-          } else {
-            mast.removeClass('is-fixed')
-          }
-        }
-      })
-
-      if (scrollPos > windowHeight + 60) {
-        sidebar.addClass('is-fixed')
-      }
-
-      var navWayPointsAdd = new Waypoint({
-        element: sidebar,
-        offset: 60,
-        handler: function(direction) {
-          if (direction === 'down') {
-            sidebar.addClass('is-fixed')
-          } else {
-            sidebar.removeClass('is-fixed')
-          }
-        }
-      })
-    })
-
-    function resizeIframe(iframe) {
-      iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
-    }
-
-    var pdf = document.getElementById('pdf');
-    var embed = document.getElementById('embed');
-
-  </script>
+  <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

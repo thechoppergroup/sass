@@ -17,5 +17,8 @@
   ],
   "devDependencies": {
     "mathsass": "^0.9.5"
+  },
+  "dependencies": {
+    "waypoints": "^4.0.1"
   }
 }
