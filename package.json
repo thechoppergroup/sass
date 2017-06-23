@@ -42,6 +42,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "clipboard": "^1.7.1",
     "gulp-copy": "^1.0.0",
     "gulp-if": "^2.0.2",
     "gulp-livingcss": "^2.1.0",

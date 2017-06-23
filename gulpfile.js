@@ -62,9 +62,12 @@ gulp.task('livingcss', function () {
         preprocess: function(context, template, Handlebars) {
             context.pages = ['Styleguide', 'Iconography', 'Brand Styleguide'];
             context.title = 'Scoutahead Styleguide v1';
-            context.footerHTML = 'Generated in June of 2017';
+            var d = new Date();
+            var m = d.getMonth();
+            var y = d.getFullYear();
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            context.footerHTML = 'Generated in ' + months[m] + ' of ' + y;
             context.globalStylesheets = ['assets/base.css', 'https://d2uooyvgxir3xs.cloudfront.net/20170531T151447214Z/css/theme.css', 'assets/theme.css', 'assets/prism.css', 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'];
-            context.scripts = ['assets/prism.js', 'https://code.jquery.com/jquery-3.2.1.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js'];
 
             Handlebars.registerHelper("debug", function(optionalValue) {
               console.log("Current Context");
@@ -110,6 +113,16 @@ gulp.task('livingcss', function () {
                   return merged;
                 }
                 return rgb(hex);
+            })
+
+            Handlebars.registerHelper('copyToClipboard', function(content) {
+                // function copyToClipboard(element) {
+                  var $temp = $("<input>");
+                  $("body").append($temp);
+                  $temp.val($(element).text()).select();
+                  document.execCommand("copy");
+                  $temp.remove();
+                // }
             })
 
             return livingcss.utils.readFileGlobs(files.templatePartials, function (data, file) {
