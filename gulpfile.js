@@ -20,7 +20,6 @@ const sassLint = require('gulp-sass-lint')
 const source = require('vinyl-source-stream')
 const sourcemaps = require('gulp-sourcemaps')
 const strip = require('gulp-strip-comments')
-// const styleguide = require('gulp-styleguide')
 const uglify = require('gulp-uglify')
 
 const styles = require('./gulp/styleguide');
