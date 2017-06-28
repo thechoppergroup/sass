@@ -20,8 +20,10 @@ const sassLint = require('gulp-sass-lint')
 const source = require('vinyl-source-stream')
 const sourcemaps = require('gulp-sourcemaps')
 const strip = require('gulp-strip-comments')
-const styleguide = require('gulp-styleguide')
+// const styleguide = require('gulp-styleguide')
 const uglify = require('gulp-uglify')
+
+const styles = require('./gulp/styleguide');
 
 // Directory Paths
 const paths = {}
@@ -94,7 +96,6 @@ gulp.task('livingcss', function () {
             Handlebars.registerHelper('toRGB', function(hex) {
 
                 function hexToRgb(hex) {
-                    // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
                     var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
                     hex = hex.replace(shorthandRegex, function(m, r, g, b) {
                         return r + r + g + g + b + b;
@@ -115,15 +116,15 @@ gulp.task('livingcss', function () {
                 return rgb(hex);
             })
 
-            Handlebars.registerHelper('copyToClipboard', function(content) {
-                // function copyToClipboard(element) {
-                  var $temp = $("<input>");
-                  $("body").append($temp);
-                  $temp.val($(element).text()).select();
-                  document.execCommand("copy");
-                  $temp.remove();
-                // }
-            })
+            // Handlebars.registerHelper('copyToClipboard', function(content) {
+            //     function copyToClipboard(element) {
+            //       var $temp = $("<input>");
+            //       $("body").append($temp);
+            //       $temp.val($(element).text()).select();
+            //       document.execCommand("copy");
+            //       $temp.remove();
+            //     }
+            // })
 
             return livingcss.utils.readFileGlobs(files.templatePartials, function (data, file) {
                 var partialName = path.basename(file, path.extname(file))

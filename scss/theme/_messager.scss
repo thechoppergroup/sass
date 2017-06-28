@@ -78,6 +78,7 @@
     }
 
     &:focus,
+    &.editor-focused,
     &:not(:empty) {
       background-color: $white;
     }
