@@ -22,7 +22,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const strip = require('gulp-strip-comments')
 const uglify = require('gulp-uglify')
 
-const styles = require('./gulp/styleguide');
+const styles = require('../gulp/styleguide');
 
 // Directory Paths
 const paths = {}
