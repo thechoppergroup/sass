@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>Scoutahead Styleguide v1</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="https://d2uooyvgxir3xs.cloudfront.net/20170531T151447214Z/css/theme.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+</head>
+
+<body class="index">
+
+  <header class="sg--mast js-header" id="mast">
+    <div class="sg--logo collapse">
+    </div>
+
+      <nav class="sg--nav collapse">
+        <ul class="unstyle">
+          <li class="is-active "><a href="index.html">index</a></li>
+          <li class=""><a href="iconography.html">Iconography</a></li>
+          <li class=""><a href="scoutahead-branding-guide.html">Scoutahead Branding Guide</a></li>
+          <li class=""><a href="scoutahead-styleguide.html">Scoutahead Styleguide</a></li>
+        </ul>
+        <button class="sg--mobile_menu">☰ Menu</button>
+      </nav>
+  </header>
+
+  <section class="sg--intro">
+
+    <div>
+
+      <img src="https://res.cloudinary.com/chopper/image/upload/v1497383519/Site%20Images/styleguide/logo_guidelines.png" width="800">
+
+    </div>
+
+    <div>
+
+      <a href="#content" class="button--add-sm" title="Start Building"><span><i class="ion-code"></i> Start Building</span></a>
+
+      <a href="#" class="button--confirm-sm" title="Download Assets"><span><i class="ion-android-download"></i> Download Assets</span></a>
+
+    </div>
+
+  </section>
+
+  <section class="sg--content" id="content">
+
+    <main class="sg--main collapse">
+
+      <article class="sg--parent js-base js-waypoint" id="base" data-section="base">
+        <a href="#base" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+        <h2 class="sg--parent-heading">Base</h2>
+
+        <div class="sg--description"><p>This is a list of currated helpers and extends to utilize in writing DRY SCSS</p></div>
+
+
+
+
+
+      </article>
+      <article class="sg--parent js-global-variables js-waypoint" id="global-variables" data-section="global-variables">
+        <a href="#global-variables" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+        <h2 class="sg--parent-heading">Global Variables</h2>
+
+        <div class="sg--description"><p>This is a set of variables that can be used throughout the Scoutahead universe</p></div>
+
+
+
+
+<article class="sg--child js-global-variables-breakpoints js-waypoint" id="_global-variables-breakpoints" data-section="global-variables-breakpoints">
+
+  <div class="sg--child-header">
+
+    <a href="#global-variables-breakpoints" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Breakpoints</h2>
+
+
+  </div>
+<livingcss-example>.example {
+   get-deep(breakpoints, iphone_4.min);
+ }</livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-breakpoints">
+  <label for="sg--codeToggle-global-variables-breakpoints"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-global-variables-color-base js-waypoint" id="_global-variables-color-base" data-section="global-variables-color-base">
+
+  <div class="sg--child-header">
+
+    <a href="#global-variables-color-base" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Color Base</h2>
+
+    <div class="sg--description"><p>Different example output than code output</p></div>
+
+  </div>
+<livingcss-example><p class="myclass">Lorem ipsum dolar itset</p></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-color-base">
+  <label for="sg--codeToggle-global-variables-color-base"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-global-variables-color-wheel js-waypoint" id="_global-variables-color-wheel" data-section="global-variables-color-wheel">
+
+  <div class="sg--child-header">
+
+    <a href="#global-variables-color-wheel" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Color Wheel</h2>
+
+    <div class="sg--description"><p>Different example output than code output</p></div>
+
+  </div>
+<livingcss-example><div class="my-awesome-class">Example</div></livingcss-example>
+
+<div class="flex">
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #f7ec1f">#f7ec1f<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">yellow</p>
+
+      <span class="sg--color-cBlock" style="background-color: #f7ec1f;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#f7ec1f</span></li>
+        <li><span class="collapse">RGB</span> <span>(247, 236, 31)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #ffd108">#ffd108<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">yellow-orange</p>
+
+      <span class="sg--color-cBlock" style="background-color: #ffd108;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#ffd108</span></li>
+        <li><span class="collapse">RGB</span> <span>(255, 209, 8)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #faa71a">#faa71a<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">orange</p>
+
+      <span class="sg--color-cBlock" style="background-color: #faa71a;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#faa71a</span></li>
+        <li><span class="collapse">RGB</span> <span>(250, 167, 26)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #f47c20">#f47c20<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">red-orange</p>
+
+      <span class="sg--color-cBlock" style="background-color: #f47c20;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#f47c20</span></li>
+        <li><span class="collapse">RGB</span> <span>(244, 124, 32)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #ee2c24">#ee2c24<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">red</p>
+
+      <span class="sg--color-cBlock" style="background-color: #ee2c24;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#ee2c24</span></li>
+        <li><span class="collapse">RGB</span> <span>(238, 44, 36)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #ed2490">#ed2490<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">red-violet</p>
+
+      <span class="sg--color-cBlock" style="background-color: #ed2490;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#ed2490</span></li>
+        <li><span class="collapse">RGB</span> <span>(237, 36, 144)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #7f4098">#7f4098<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">violet</p>
+
+      <span class="sg--color-cBlock" style="background-color: #7f4098;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#7f4098</span></li>
+        <li><span class="collapse">RGB</span> <span>(127, 64, 152)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #2e429b">#2e429b<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">blue-violet</p>
+
+      <span class="sg--color-cBlock" style="background-color: #2e429b;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#2e429b</span></li>
+        <li><span class="collapse">RGB</span> <span>(46, 66, 155)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #2077bd">#2077bd<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">blue</p>
+
+      <span class="sg--color-cBlock" style="background-color: #2077bd;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#2077bd</span></li>
+        <li><span class="collapse">RGB</span> <span>(32, 119, 189)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #00b2d7">#00b2d7<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">blue-green</p>
+
+      <span class="sg--color-cBlock" style="background-color: #00b2d7;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#00b2d7</span></li>
+        <li><span class="collapse">RGB</span> <span>(0, 178, 215)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #21b24b">#21b24b<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">green</p>
+
+      <span class="sg--color-cBlock" style="background-color: #21b24b;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#21b24b</span></li>
+        <li><span class="collapse">RGB</span> <span>(33, 178, 75)</span></li>
+      </ul>
+    </div>
+  <div class="card card--colors">
+
+      <span class="sg--color-example" style="background-color: #85c441">#85c441<span>Copy to Clipboard</span></span>
+
+      <p class="sg--color-var">yellow-green</p>
+
+      <span class="sg--color-cBlock" style="background-color: #85c441;"></span>
+
+      <ul class="unstyle sg--color-values">
+        <li><span class="collapse">HEX</span> <span>#85c441</span></li>
+        <li><span class="collapse">RGB</span> <span>(133, 196, 65)</span></li>
+      </ul>
+    </div>
+</div>
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-color-wheel">
+  <label for="sg--codeToggle-global-variables-color-wheel"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-global-variables-font-weights js-waypoint" id="_global-variables-font-weights" data-section="global-variables-font-weights">
+
+  <div class="sg--child-header">
+
+    <a href="#global-variables-font-weights" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Font Weights</h2>
+
+    <div class="sg--description"><p>Different example output than code output</p></div>
+
+  </div>
+<livingcss-example><div class="my-awesome-class">Example</div></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-font-weights">
+  <label for="sg--codeToggle-global-variables-font-weights"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-scss">&lt;h4&gt;something&lt;/h4&gt;</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-global-variables-inputs js-waypoint" id="_global-variables-inputs" data-section="global-variables-inputs">
+
+  <div class="sg--child-header">
+
+    <a href="#global-variables-inputs" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Inputs</h2>
+
+    <div class="sg--description"><p>Different example output than code output</p></div>
+
+  </div>
+<livingcss-example><input type="text" placeholder="This is an input"></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-variables-inputs">
+  <label for="sg--codeToggle-global-variables-inputs"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-markup">&lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;This is an input&quot;&gt;</code></pre>
+</div>
+
+</article>
+
+
+
+      </article>
+      <article class="sg--parent js-global-classes js-waypoint" id="global-classes" data-section="global-classes">
+        <a href="#global-classes" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+        <h2 class="sg--parent-heading">Global Classes</h2>
+
+        <div class="sg--description"><p>This is a set of variables that can be used throughout the Scoutahead universe</p></div>
+
+
+
+
+<article class="sg--child js-global-classes-alignment js-waypoint" id="_global-classes-alignment" data-section="global-classes-alignment">
+
+  <div class="sg--child-header">
+
+    <a href="#global-classes-alignment" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Alignment</h2>
+
+    <div class="sg--description"><p>Different example output than code output</p></div>
+
+  </div>  <div class="sg--usage origin">This is how this should be handled</div>
+
+<livingcss-example><div class="origin">
+  <div class="align--center-left">This is stuff</div>
+</div>
+
+<h6>align--center-right</h6>
+<div class="origin">
+  <div class="align--center-right">This is stuff</div>
+</div></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-global-classes-alignment">
+  <label for="sg--codeToggle-global-classes-alignment"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-html">&lt;div class&#x3D;&quot;origin&quot;&gt;
+  &lt;div class&#x3D;&quot;align--left-center&quot;&gt;This is stuff&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+</article>
+
+
+
+      </article>
+      <article class="sg--parent js-buttons js-waypoint" id="buttons" data-section="buttons">
+        <a href="#buttons" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+        <h2 class="sg--parent-heading">Buttons</h2>
+
+        <div class="sg--description"><p>A list of all the uses and types of our buttons</p></div>
+
+
+
+
+<article class="sg--child js-buttons-add js-waypoint" id="_buttons-add" data-section="buttons-add">
+
+  <div class="sg--child-header">
+
+    <a href="#buttons-add" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Add</h2>
+
+    <div class="sg--description"><p>The add button should be used in the case of adding of accepting an action.</p></div>
+
+  </div>  <div class="sg--usage origin">The &#x60;size&#x60; property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.</div>
+
+<livingcss-example><button class="button--add-xs" size="sm"><span><i class="ion-search"></i> Add Action</button></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-buttons-add">
+  <label for="sg--codeToggle-buttons-add"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-handlebars">{{&gt; snippets/buttons/button.add size&#x3D;&quot;sm&quot; text&#x3D;&quot;Add Action&quot; icon&#x3D;&quot;search&quot; }}</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-buttons-back js-waypoint" id="_buttons-back" data-section="buttons-back">
+
+  <div class="sg--child-header">
+
+    <a href="#buttons-back" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Back</h2>
+
+    <div class="sg--description"><p>The add button should be used in the case of adding of accepting an action.</p></div>
+
+  </div>  <div class="sg--usage origin">The &#x60;size&#x60; property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.</div>
+
+<livingcss-example><button class="button--add-xs" size="sm"><span><i class="ion-close"></i> Back Action</button></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-buttons-back">
+  <label for="sg--codeToggle-buttons-back"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-handlebars">{{&gt; snippets/buttons/button.back size&#x3D;&quot;sm&quot; text&#x3D;&quot;Back Action&quot; icon&#x3D;&quot;close&quot; }}</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-buttons-cancel js-waypoint" id="_buttons-cancel" data-section="buttons-cancel">
+
+  <div class="sg--child-header">
+
+    <a href="#buttons-cancel" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Cancel</h2>
+
+    <div class="sg--description"><p>The add button should be used in the case of adding of accepting an action.</p></div>
+
+  </div>  <div class="sg--usage origin">The &#x60;size&#x60; property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.</div>
+
+<livingcss-example><button class="button--cancel-xs" size="sm"><span><i class="ion-close"></i> Cancel Action</button></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-buttons-cancel">
+  <label for="sg--codeToggle-buttons-cancel"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-handlebars">{{&gt; snippets/buttons/button.cancel size&#x3D;&quot;sm&quot; text&#x3D;&quot;Cancel Action&quot; icon&#x3D;&quot;close&quot; }}</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-buttons-popover js-waypoint" id="_buttons-popover" data-section="buttons-popover">
+
+  <div class="sg--child-header">
+
+    <a href="#buttons-popover" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Popover</h2>
+
+    <div class="sg--description"><p>The add button should be used in the case of adding of accepting an action.</p></div>
+
+  </div>  <div class="sg--usage origin">The &#x60;size&#x60; property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.</div>
+
+<livingcss-example><button class="button--popover-xs" size="sm"><span><i class="ion-close"></i> Initiate a Popover</button></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-buttons-popover">
+  <label for="sg--codeToggle-buttons-popover"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-handlebars">{{&gt; snippets/buttons/button.popover size&#x3D;&quot;sm&quot; text&#x3D;&quot;Initiate a Popover&quot; icon&#x3D;&quot;close&quot; }}</code></pre>
+</div>
+
+</article>
+
+
+<article class="sg--child js-buttons-remove js-waypoint" id="_buttons-remove" data-section="buttons-remove">
+
+  <div class="sg--child-header">
+
+    <a href="#buttons-remove" class="sg--section-anchor collapse"><i class="ion-link"></i></a>
+    <h2 class="sg--child-heading">Remove</h2>
+
+    <div class="sg--description"><p>The add button should be used in the case of adding of accepting an action.</p></div>
+
+  </div>  <div class="sg--usage origin">The &#x60;size&#x60; property can be *xs*, *sm*, *md*, *lg*. Type is a string value that is used for the placeholder. Icon value takes the name of the icon following the ion- prefix.</div>
+
+<livingcss-example><button class="button--remove-xs" size="sm"><span><i class="ion-close"></i> Remove Action</button></livingcss-example>
+
+
+<div class="sg--markup">
+  <input type="checkbox" class="sg--codeToggle collapse" id="sg--codeToggle-buttons-remove">
+  <label for="sg--codeToggle-buttons-remove"><i class="ion-code"></i> <span class="is-checked collapse">Hide Code</span> <span class="is-unchecked">Show Code</span></label>
+  <pre class="sg--code"><code class="language-handlebars">{{&gt; snippets/buttons/button.remove size&#x3D;&quot;sm&quot; text&#x3D;&quot;Remove Action&quot; icon&#x3D;&quot;close&quot; }}</code></pre>
+</div>
+
+</article>
+
+
+
+      </article>
+
+    </main>
+
+    <aside class="sg--sidebar js-sidebar" id="sidebar">
+
+      <ul class="sg--sidebar-menu unstyle js-sidemenu">
+        <li class="parent js-base"><a href="#base" data-section="base">Base</a>
+          
+          
+        </li>
+        <li class="parent js-global-variables"><a href="#global-variables" data-section="global-variables">Global Variables</a>
+          <ul class="unstyle">
+            <li class="origin js-global-variables-breakpoints"><a href="#global-variables_global-variables-breakpoints">Breakpoints</a></li>
+            <li class="origin js-global-variables-color-base"><a href="#global-variables_global-variables-color-base">Color Base</a></li>
+            <li class="origin js-global-variables-color-wheel"><a href="#global-variables_global-variables-color-wheel">Color Wheel</a></li>
+            <li class="origin js-global-variables-font-weights"><a href="#global-variables_global-variables-font-weights">Font Weights</a></li>
+            <li class="origin js-global-variables-inputs"><a href="#global-variables_global-variables-inputs">Inputs</a></li>
+          </ul>
+        </li>
+        <li class="parent js-global-classes"><a href="#global-classes" data-section="global-classes">Global Classes</a>
+          <ul class="unstyle">
+            <li class="origin js-global-classes-alignment"><a href="#global-classes_global-classes-alignment">Alignment</a></li>
+          </ul>
+        </li>
+        <li class="parent js-buttons"><a href="#buttons" data-section="buttons">Buttons</a>
+          <ul class="unstyle">
+            <li class="origin js-buttons-add"><a href="#buttons_buttons-add">Add</a></li>
+            <li class="origin js-buttons-back"><a href="#buttons_buttons-back">Back</a></li>
+            <li class="origin js-buttons-cancel"><a href="#buttons_buttons-cancel">Cancel</a></li>
+            <li class="origin js-buttons-popover"><a href="#buttons_buttons-popover">Popover</a></li>
+            <li class="origin js-buttons-remove"><a href="#buttons_buttons-remove">Remove</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </aside>
+
+  </section>
+
+  <footer class="sg--footer">
+    <p>Generated in July of 2017</p>
+  </footer>
+
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
