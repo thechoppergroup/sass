@@ -1,6 +1,3 @@
-const browserify = require('browserify')
-
-
 var Js = require('js-');
 var $ = require('jquery');
 var path = require('path');
