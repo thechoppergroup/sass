@@ -1,8 +1,0 @@
-.question {
-  transform: translate(100%, 0);
-  transition: transform .25s ease-in-out;
-
-  &:not(.is-hidden) {
-    transform: translate(0,0);
-  }
-}
